@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrC-Db-VMJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="999" constant="37" id="wW0-Rb-kmP"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Recycle Small" translatesAutoresizingMaskIntoConstraints="NO" id="mo6-R6-9R8">
+                                <rect key="frame" x="271" y="2" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="l9f-PI-9SG"/>
+                                    <constraint firstAttribute="width" constant="33" id="w6V-xO-i4k"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dpf-uY-S8A" userLabel="Next Collection">
+                                <rect key="frame" x="0.0" y="8" width="222" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="OVJ-UG-Mq9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trash Small" translatesAutoresizingMaskIntoConstraints="NO" id="KQ7-My-azW">
+                                <rect key="frame" x="230" y="2" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="Dd0-sF-BvE"/>
+                                    <constraint firstAttribute="height" constant="33" id="Rvm-dX-8kE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KQ7-My-azW" firstAttribute="leading" secondItem="dpf-uY-S8A" secondAttribute="trailing" constant="8" id="2bC-Dj-7Yp"/>
+                            <constraint firstItem="FrC-Db-VMJ" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="7GQ-W1-svG"/>
+                            <constraint firstAttribute="centerY" secondItem="mo6-R6-9R8" secondAttribute="centerY" id="94W-Sn-WbP"/>
+                            <constraint firstAttribute="trailing" secondItem="FrC-Db-VMJ" secondAttribute="trailing" id="QOD-tf-db3"/>
+                            <constraint firstAttribute="centerY" secondItem="KQ7-My-azW" secondAttribute="centerY" id="RGt-dt-nqD"/>
+                            <constraint firstItem="FrC-Db-VMJ" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="Vw7-Yg-9D0"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="FrC-Db-VMJ" secondAttribute="bottom" id="oxP-RS-Qd1"/>
+                            <constraint firstItem="mo6-R6-9R8" firstAttribute="leading" secondItem="KQ7-My-azW" secondAttribute="trailing" constant="8" id="qkr-O8-rmj"/>
+                            <constraint firstAttribute="centerY" secondItem="dpf-uY-S8A" secondAttribute="centerY" id="rdh-dU-Y2a"/>
+                            <constraint firstItem="dpf-uY-S8A" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="smV-CE-LIn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mo6-R6-9R8" secondAttribute="trailing" id="zVF-Yz-LO4"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="37"/>
+                    <connections>
+                        <outlet property="nextCollection" destination="dpf-uY-S8A" id="OLB-xp-Yx0"/>
+                        <outlet property="recyclingIcon" destination="mo6-R6-9R8" id="LQb-vW-f7x"/>
+                        <outlet property="trashIcon" destination="KQ7-My-azW" id="BZ9-ON-227"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="283.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Recycle Small" width="50" height="50"/>
+        <image name="Trash Small" width="50" height="50"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
