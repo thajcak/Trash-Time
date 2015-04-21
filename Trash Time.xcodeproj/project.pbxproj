@@ -12,18 +12,87 @@
 		D54A904F1AD5FA3B00528425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54A904D1AD5FA3B00528425 /* Main.storyboard */; };
 		D54A90511AD5FA3B00528425 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A90501AD5FA3B00528425 /* Images.xcassets */; };
 		D54A90541AD5FA3B00528425 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54A90521AD5FA3B00528425 /* LaunchScreen.xib */; };
-		D54A90601AD5FA3B00528425 /* Trash_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54A905F1AD5FA3B00528425 /* Trash_TimeTests.swift */; };
+		D55B58F61AD6AF610069BE0A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */; };
+		D55B58FD1AD6AFE90069BE0A /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B58FC1AD6AFE90069BE0A /* WelcomeController.swift */; };
+		D55B58FF1AD6B0080069BE0A /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B58FE1AD6B0080069BE0A /* SetupController.swift */; };
+		D55B59011AD6B01F0069BE0A /* TimingSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B59001AD6B01F0069BE0A /* TimingSetupController.swift */; };
+		D55B592E1AD6B1060069BE0A /* RAMPaperSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B592D1AD6B1060069BE0A /* RAMPaperSwitch.swift */; };
+		D55B593F1AD6B15E0069BE0A /* NSCalendar+RSDFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B59311AD6B15E0069BE0A /* NSCalendar+RSDFAdditions.m */; };
+		D55B59401AD6B15E0069BE0A /* RSDFDatePickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B59341AD6B15E0069BE0A /* RSDFDatePickerCollectionView.m */; };
+		D55B59411AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B59361AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.m */; };
+		D55B59421AD6B15E0069BE0A /* RSDFDatePickerDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B59381AD6B15E0069BE0A /* RSDFDatePickerDayCell.m */; };
+		D55B59431AD6B15E0069BE0A /* RSDFDatePickerDaysOfWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B593A1AD6B15E0069BE0A /* RSDFDatePickerDaysOfWeekView.m */; };
+		D55B59441AD6B15E0069BE0A /* RSDFDatePickerMonthHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B593C1AD6B15E0069BE0A /* RSDFDatePickerMonthHeader.m */; };
+		D55B59451AD6B15E0069BE0A /* RSDFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B593E1AD6B15E0069BE0A /* RSDFDatePickerView.m */; };
+		D56293011AE167D700FA1B3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56292FE1AE167D700FA1B3D /* CoreGraphics.framework */; };
+		D56293021AE167D700FA1B3D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56292FF1AE167D700FA1B3D /* CoreTelephony.framework */; };
+		D56293031AE167D700FA1B3D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293001AE167D700FA1B3D /* CoreText.framework */; };
+		D562930A1AE167FA00FA1B3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293041AE167FA00FA1B3D /* Foundation.framework */; };
+		D562930B1AE167FA00FA1B3D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293051AE167FA00FA1B3D /* libxml2.dylib */; };
+		D562930C1AE167FA00FA1B3D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293061AE167FA00FA1B3D /* OpenGLES.framework */; };
+		D562930D1AE167FA00FA1B3D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293071AE167FA00FA1B3D /* QuartzCore.framework */; };
+		D562930E1AE167FA00FA1B3D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293081AE167FA00FA1B3D /* SystemConfiguration.framework */; };
+		D562930F1AE167FA00FA1B3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293091AE167FA00FA1B3D /* UIKit.framework */; };
+		D56293111AE1683F00FA1B3D /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56292FB1AE1675F00FA1B3D /* SupportKit.framework */; };
+		D56293121AE1684D00FA1B3D /* SupportKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D56292FA1AE1675F00FA1B3D /* SupportKit.bundle */; };
+		D56293131AE1685300FA1B3D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55B594F1AD6B7BC0069BE0A /* Crashlytics.framework */; };
+		D562931B1AE19EBF00FA1B3D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D562931A1AE19EBF00FA1B3D /* NotificationCenter.framework */; };
+		D56293201AE19EBF00FA1B3D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562931F1AE19EBF00FA1B3D /* TodayViewController.swift */; };
+		D56293221AE19EBF00FA1B3D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */; };
+		D56293251AE19EBF00FA1B3D /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D56293181AE19EBF00FA1B3D /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D562932B1AE1A37A00FA1B3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A90501AD5FA3B00528425 /* Images.xcassets */; };
+		D562933C1AE1DF9000FA1B3D /* TrashTimeShare.h in Headers */ = {isa = PBXBuildFile; fileRef = D562933B1AE1DF9000FA1B3D /* TrashTimeShare.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D562934E1AE1DF9100FA1B3D /* TrashTimeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293371AE1DF9000FA1B3D /* TrashTimeShare.framework */; };
+		D562934F1AE1DF9100FA1B3D /* TrashTimeShare.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D56293371AE1DF9000FA1B3D /* TrashTimeShare.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D56293571AE1DFBC00FA1B3D /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B58F71AD6AF9B0069BE0A /* Logic.swift */; };
+		D56293581AE1DFCC00FA1B3D /* TrashTimeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56293371AE1DF9000FA1B3D /* TrashTimeShare.framework */; };
+		D56293591AE1E8DF00FA1B3D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562932E1AE1DD5800FA1B3D /* Theme.swift */; };
+		D5B41D791ADD81FD00E56477 /* DebugTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */; };
+		D5B41D7D1ADDBA4F00E56477 /* AMPopTip.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B41D7C1ADDBA4F00E56477 /* AMPopTip.m */; };
+		D5CCADF51AD87885008CE664 /* EnableNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCADF41AD87885008CE664 /* EnableNotificationsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D54A905A1AD5FA3B00528425 /* PBXContainerItemProxy */ = {
+		D56293231AE19EBF00FA1B3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D54A903C1AD5FA3B00528425 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D54A90431AD5FA3B00528425;
-			remoteInfo = "Trash Time";
+			remoteGlobalIDString = D56293171AE19EBF00FA1B3D;
+			remoteInfo = Today;
+		};
+		D562934C1AE1DF9100FA1B3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D54A903C1AD5FA3B00528425 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D56293361AE1DF9000FA1B3D;
+			remoteInfo = TrashTimeShare;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D56293291AE19EC000FA1B3D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D56293251AE19EBF00FA1B3D /* Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56293531AE1DF9100FA1B3D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D562934F1AE1DF9100FA1B3D /* TrashTimeShare.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D54A90441AD5FA3B00528425 /* Trash Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trash Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,9 +102,55 @@
 		D54A904E1AD5FA3B00528425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D54A90501AD5FA3B00528425 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D54A90531AD5FA3B00528425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D54A90591AD5FA3B00528425 /* Trash TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trash TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D54A905E1AD5FA3B00528425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D54A905F1AD5FA3B00528425 /* Trash_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash_TimeTests.swift; sourceTree = "<group>"; };
+		D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D55B58F71AD6AF9B0069BE0A /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logic.swift; path = "../Trash Time/Logic.swift"; sourceTree = "<group>"; };
+		D55B58FC1AD6AFE90069BE0A /* WelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		D55B58FE1AD6B0080069BE0A /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupController.swift; sourceTree = "<group>"; };
+		D55B59001AD6B01F0069BE0A /* TimingSetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingSetupController.swift; sourceTree = "<group>"; };
+		D55B592D1AD6B1060069BE0A /* RAMPaperSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMPaperSwitch.swift; sourceTree = "<group>"; };
+		D55B59301AD6B15E0069BE0A /* NSCalendar+RSDFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+RSDFAdditions.h"; sourceTree = "<group>"; };
+		D55B59311AD6B15E0069BE0A /* NSCalendar+RSDFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+RSDFAdditions.m"; sourceTree = "<group>"; };
+		D55B59321AD6B15E0069BE0A /* RSDayFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDayFlow.h; sourceTree = "<group>"; };
+		D55B59331AD6B15E0069BE0A /* RSDFDatePickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerCollectionView.h; sourceTree = "<group>"; };
+		D55B59341AD6B15E0069BE0A /* RSDFDatePickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerCollectionView.m; sourceTree = "<group>"; };
+		D55B59351AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerCollectionViewLayout.h; sourceTree = "<group>"; };
+		D55B59361AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerCollectionViewLayout.m; sourceTree = "<group>"; };
+		D55B59371AD6B15E0069BE0A /* RSDFDatePickerDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerDayCell.h; sourceTree = "<group>"; };
+		D55B59381AD6B15E0069BE0A /* RSDFDatePickerDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerDayCell.m; sourceTree = "<group>"; };
+		D55B59391AD6B15E0069BE0A /* RSDFDatePickerDaysOfWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerDaysOfWeekView.h; sourceTree = "<group>"; };
+		D55B593A1AD6B15E0069BE0A /* RSDFDatePickerDaysOfWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerDaysOfWeekView.m; sourceTree = "<group>"; };
+		D55B593B1AD6B15E0069BE0A /* RSDFDatePickerMonthHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerMonthHeader.h; sourceTree = "<group>"; };
+		D55B593C1AD6B15E0069BE0A /* RSDFDatePickerMonthHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerMonthHeader.m; sourceTree = "<group>"; };
+		D55B593D1AD6B15E0069BE0A /* RSDFDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerView.h; sourceTree = "<group>"; };
+		D55B593E1AD6B15E0069BE0A /* RSDFDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerView.m; sourceTree = "<group>"; };
+		D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		D55B594F1AD6B7BC0069BE0A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D56292FA1AE1675F00FA1B3D /* SupportKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SupportKit.bundle; sourceTree = "<group>"; };
+		D56292FB1AE1675F00FA1B3D /* SupportKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SupportKit.framework; sourceTree = "<group>"; };
+		D56292FE1AE167D700FA1B3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D56292FF1AE167D700FA1B3D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D56293001AE167D700FA1B3D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D56293041AE167FA00FA1B3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D56293051AE167FA00FA1B3D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		D56293061AE167FA00FA1B3D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D56293071AE167FA00FA1B3D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D56293081AE167FA00FA1B3D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D56293091AE167FA00FA1B3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D56293181AE19EBF00FA1B3D /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D562931A1AE19EBF00FA1B3D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D562931E1AE19EBF00FA1B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D562931F1AE19EBF00FA1B3D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		D562932E1AE1DD5800FA1B3D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = "../Trash Time/Theme.swift"; sourceTree = "<group>"; };
+		D56293371AE1DF9000FA1B3D /* TrashTimeShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrashTimeShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D562933A1AE1DF9000FA1B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D562933B1AE1DF9000FA1B3D /* TrashTimeShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrashTimeShare.h; sourceTree = "<group>"; };
+		D562935A1AE1EBAE00FA1B3D /* Trash Time.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Trash Time.entitlements"; sourceTree = "<group>"; };
+		D562935B1AE1ECA400FA1B3D /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
+		D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableViewController.swift; sourceTree = "<group>"; };
+		D5B41D7B1ADDBA4F00E56477 /* AMPopTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopTip.h; sourceTree = "<group>"; };
+		D5B41D7C1ADDBA4F00E56477 /* AMPopTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPopTip.m; sourceTree = "<group>"; };
+		D5CCADF41AD87885008CE664 /* EnableNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnableNotificationsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,10 +158,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D56293011AE167D700FA1B3D /* CoreGraphics.framework in Frameworks */,
+				D56293021AE167D700FA1B3D /* CoreTelephony.framework in Frameworks */,
+				D56293031AE167D700FA1B3D /* CoreText.framework in Frameworks */,
+				D562930A1AE167FA00FA1B3D /* Foundation.framework in Frameworks */,
+				D562930B1AE167FA00FA1B3D /* libxml2.dylib in Frameworks */,
+				D562930C1AE167FA00FA1B3D /* OpenGLES.framework in Frameworks */,
+				D562930D1AE167FA00FA1B3D /* QuartzCore.framework in Frameworks */,
+				D562930E1AE167FA00FA1B3D /* SystemConfiguration.framework in Frameworks */,
+				D562934E1AE1DF9100FA1B3D /* TrashTimeShare.framework in Frameworks */,
+				D562930F1AE167FA00FA1B3D /* UIKit.framework in Frameworks */,
+				D56293131AE1685300FA1B3D /* Crashlytics.framework in Frameworks */,
+				D56293111AE1683F00FA1B3D /* SupportKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D54A90561AD5FA3B00528425 /* Frameworks */ = {
+		D56293151AE19EBF00FA1B3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56293581AE1DFCC00FA1B3D /* TrashTimeShare.framework in Frameworks */,
+				D562931B1AE19EBF00FA1B3D /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56293331AE1DF9000FA1B3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,7 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				D54A90461AD5FA3B00528425 /* Trash Time */,
-				D54A905C1AD5FA3B00528425 /* Trash TimeTests */,
+				D562931C1AE19EBF00FA1B3D /* Today */,
+				D56293381AE1DF9000FA1B3D /* TrashTimeShare */,
+				D56293191AE19EBF00FA1B3D /* Frameworks */,
 				D54A90451AD5FA3B00528425 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				D54A90441AD5FA3B00528425 /* Trash Time.app */,
-				D54A90591AD5FA3B00528425 /* Trash TimeTests.xctest */,
+				D56293181AE19EBF00FA1B3D /* Today.appex */,
+				D56293371AE1DF9000FA1B3D /* TrashTimeShare.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,10 +218,12 @@
 			children = (
 				D54A90491AD5FA3B00528425 /* AppDelegate.swift */,
 				D54A904B1AD5FA3B00528425 /* ViewController.swift */,
-				D54A904D1AD5FA3B00528425 /* Main.storyboard */,
-				D54A90501AD5FA3B00528425 /* Images.xcassets */,
-				D54A90521AD5FA3B00528425 /* LaunchScreen.xib */,
+				D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */,
+				D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */,
+				D55B58FB1AD6AFD40069BE0A /* Intro */,
 				D54A90471AD5FA3B00528425 /* Supporting Files */,
+				D55B59021AD6B0B40069BE0A /* Third Party */,
+				D56293101AE1681000FA1B3D /* Frameworks */,
 			);
 			path = "Trash Time";
 			sourceTree = "<group>";
@@ -90,29 +231,162 @@
 		D54A90471AD5FA3B00528425 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D562935A1AE1EBAE00FA1B3D /* Trash Time.entitlements */,
+				D54A904D1AD5FA3B00528425 /* Main.storyboard */,
+				D54A90521AD5FA3B00528425 /* LaunchScreen.xib */,
+				D54A90501AD5FA3B00528425 /* Images.xcassets */,
 				D54A90481AD5FA3B00528425 /* Info.plist */,
+				D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D54A905C1AD5FA3B00528425 /* Trash TimeTests */ = {
+		D55B58FB1AD6AFD40069BE0A /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				D54A905F1AD5FA3B00528425 /* Trash_TimeTests.swift */,
-				D54A905D1AD5FA3B00528425 /* Supporting Files */,
+				D55B58FC1AD6AFE90069BE0A /* WelcomeController.swift */,
+				D55B58FE1AD6B0080069BE0A /* SetupController.swift */,
+				D55B59001AD6B01F0069BE0A /* TimingSetupController.swift */,
+				D5CCADF41AD87885008CE664 /* EnableNotificationsController.swift */,
 			);
-			path = "Trash TimeTests";
+			path = Intro;
 			sourceTree = "<group>";
 		};
-		D54A905D1AD5FA3B00528425 /* Supporting Files */ = {
+		D55B59021AD6B0B40069BE0A /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
-				D54A905E1AD5FA3B00528425 /* Info.plist */,
+				D5B41D7A1ADDBA4F00E56477 /* AMPopTip */,
+				D55B592C1AD6B1060069BE0A /* PaperSwitch */,
+				D55B592F1AD6B15E0069BE0A /* RSDayFlow */,
+				D56292F91AE1675F00FA1B3D /* SupportKit */,
+				D55B594F1AD6B7BC0069BE0A /* Crashlytics.framework */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		D55B592C1AD6B1060069BE0A /* PaperSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				D55B592D1AD6B1060069BE0A /* RAMPaperSwitch.swift */,
+			);
+			path = PaperSwitch;
+			sourceTree = "<group>";
+		};
+		D55B592F1AD6B15E0069BE0A /* RSDayFlow */ = {
+			isa = PBXGroup;
+			children = (
+				D55B59301AD6B15E0069BE0A /* NSCalendar+RSDFAdditions.h */,
+				D55B59311AD6B15E0069BE0A /* NSCalendar+RSDFAdditions.m */,
+				D55B59321AD6B15E0069BE0A /* RSDayFlow.h */,
+				D55B59331AD6B15E0069BE0A /* RSDFDatePickerCollectionView.h */,
+				D55B59341AD6B15E0069BE0A /* RSDFDatePickerCollectionView.m */,
+				D55B59351AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.h */,
+				D55B59361AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.m */,
+				D55B59371AD6B15E0069BE0A /* RSDFDatePickerDayCell.h */,
+				D55B59381AD6B15E0069BE0A /* RSDFDatePickerDayCell.m */,
+				D55B59391AD6B15E0069BE0A /* RSDFDatePickerDaysOfWeekView.h */,
+				D55B593A1AD6B15E0069BE0A /* RSDFDatePickerDaysOfWeekView.m */,
+				D55B593B1AD6B15E0069BE0A /* RSDFDatePickerMonthHeader.h */,
+				D55B593C1AD6B15E0069BE0A /* RSDFDatePickerMonthHeader.m */,
+				D55B593D1AD6B15E0069BE0A /* RSDFDatePickerView.h */,
+				D55B593E1AD6B15E0069BE0A /* RSDFDatePickerView.m */,
+			);
+			path = RSDayFlow;
+			sourceTree = "<group>";
+		};
+		D56292F91AE1675F00FA1B3D /* SupportKit */ = {
+			isa = PBXGroup;
+			children = (
+				D56292FA1AE1675F00FA1B3D /* SupportKit.bundle */,
+				D56292FB1AE1675F00FA1B3D /* SupportKit.framework */,
+			);
+			path = SupportKit;
+			sourceTree = "<group>";
+		};
+		D56293101AE1681000FA1B3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D56293041AE167FA00FA1B3D /* Foundation.framework */,
+				D56293051AE167FA00FA1B3D /* libxml2.dylib */,
+				D56293061AE167FA00FA1B3D /* OpenGLES.framework */,
+				D56293071AE167FA00FA1B3D /* QuartzCore.framework */,
+				D56293081AE167FA00FA1B3D /* SystemConfiguration.framework */,
+				D56293091AE167FA00FA1B3D /* UIKit.framework */,
+				D56292FE1AE167D700FA1B3D /* CoreGraphics.framework */,
+				D56292FF1AE167D700FA1B3D /* CoreTelephony.framework */,
+				D56293001AE167D700FA1B3D /* CoreText.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D56293191AE19EBF00FA1B3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D562931A1AE19EBF00FA1B3D /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D562931C1AE19EBF00FA1B3D /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				D562931F1AE19EBF00FA1B3D /* TodayViewController.swift */,
+				D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */,
+				D562931D1AE19EBF00FA1B3D /* Supporting Files */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		D562931D1AE19EBF00FA1B3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D562935B1AE1ECA400FA1B3D /* Today.entitlements */,
+				D562931E1AE19EBF00FA1B3D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D56293381AE1DF9000FA1B3D /* TrashTimeShare */ = {
+			isa = PBXGroup;
+			children = (
+				D562933B1AE1DF9000FA1B3D /* TrashTimeShare.h */,
+				D55B58F71AD6AF9B0069BE0A /* Logic.swift */,
+				D562932E1AE1DD5800FA1B3D /* Theme.swift */,
+				D56293391AE1DF9000FA1B3D /* Supporting Files */,
+			);
+			path = TrashTimeShare;
+			sourceTree = "<group>";
+		};
+		D56293391AE1DF9000FA1B3D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D562933A1AE1DF9000FA1B3D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5B41D7A1ADDBA4F00E56477 /* AMPopTip */ = {
+			isa = PBXGroup;
+			children = (
+				D5B41D7B1ADDBA4F00E56477 /* AMPopTip.h */,
+				D5B41D7C1ADDBA4F00E56477 /* AMPopTip.m */,
+			);
+			path = AMPopTip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D56293341AE1DF9000FA1B3D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D562933C1AE1DF9000FA1B3D /* TrashTimeShare.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		D54A90431AD5FA3B00528425 /* Trash Time */ = {
@@ -122,33 +396,56 @@
 				D54A90401AD5FA3B00528425 /* Sources */,
 				D54A90411AD5FA3B00528425 /* Frameworks */,
 				D54A90421AD5FA3B00528425 /* Resources */,
+				D55B58F41AD6AE820069BE0A /* Increment Build Number */,
+				D55B594E1AD6B79B0069BE0A /* Crashlytics */,
+				D56293291AE19EC000FA1B3D /* Embed App Extensions */,
+				D56293531AE1DF9100FA1B3D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D56293241AE19EBF00FA1B3D /* PBXTargetDependency */,
+				D562934D1AE1DF9100FA1B3D /* PBXTargetDependency */,
 			);
 			name = "Trash Time";
 			productName = "Trash Time";
 			productReference = D54A90441AD5FA3B00528425 /* Trash Time.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D54A90581AD5FA3B00528425 /* Trash TimeTests */ = {
+		D56293171AE19EBF00FA1B3D /* Today */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D54A90661AD5FA3B00528425 /* Build configuration list for PBXNativeTarget "Trash TimeTests" */;
+			buildConfigurationList = D56293261AE19EC000FA1B3D /* Build configuration list for PBXNativeTarget "Today" */;
 			buildPhases = (
-				D54A90551AD5FA3B00528425 /* Sources */,
-				D54A90561AD5FA3B00528425 /* Frameworks */,
-				D54A90571AD5FA3B00528425 /* Resources */,
+				D56293141AE19EBF00FA1B3D /* Sources */,
+				D56293151AE19EBF00FA1B3D /* Frameworks */,
+				D56293161AE19EBF00FA1B3D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D54A905B1AD5FA3B00528425 /* PBXTargetDependency */,
 			);
-			name = "Trash TimeTests";
-			productName = "Trash TimeTests";
-			productReference = D54A90591AD5FA3B00528425 /* Trash TimeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = Today;
+			productName = Today;
+			productReference = D56293181AE19EBF00FA1B3D /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D56293361AE1DF9000FA1B3D /* TrashTimeShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56293501AE1DF9100FA1B3D /* Build configuration list for PBXNativeTarget "TrashTimeShare" */;
+			buildPhases = (
+				D56293321AE1DF9000FA1B3D /* Sources */,
+				D56293331AE1DF9000FA1B3D /* Frameworks */,
+				D56293341AE1DF9000FA1B3D /* Headers */,
+				D56293351AE1DF9000FA1B3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrashTimeShare;
+			productName = TrashTimeShare;
+			productReference = D56293371AE1DF9000FA1B3D /* TrashTimeShare.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -161,10 +458,28 @@
 				TargetAttributes = {
 					D54A90431AD5FA3B00528425 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = U2KGL647XP;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
-					D54A90581AD5FA3B00528425 = {
+					D56293171AE19EBF00FA1B3D = {
 						CreatedOnToolsVersion = 6.3;
-						TestTargetID = D54A90431AD5FA3B00528425;
+						DevelopmentTeam = U2KGL647XP;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					D56293361AE1DF9000FA1B3D = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = U2KGL647XP;
 					};
 				};
 			};
@@ -182,7 +497,8 @@
 			projectRoot = "";
 			targets = (
 				D54A90431AD5FA3B00528425 /* Trash Time */,
-				D54A90581AD5FA3B00528425 /* Trash TimeTests */,
+				D56293171AE19EBF00FA1B3D /* Today */,
+				D56293361AE1DF9000FA1B3D /* TrashTimeShare */,
 			);
 		};
 /* End PBXProject section */
@@ -194,11 +510,21 @@
 			files = (
 				D54A904F1AD5FA3B00528425 /* Main.storyboard in Resources */,
 				D54A90541AD5FA3B00528425 /* LaunchScreen.xib in Resources */,
+				D56293121AE1684D00FA1B3D /* SupportKit.bundle in Resources */,
 				D54A90511AD5FA3B00528425 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D54A90571AD5FA3B00528425 /* Resources */ = {
+		D56293161AE19EBF00FA1B3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56293221AE19EBF00FA1B3D /* MainInterface.storyboard in Resources */,
+				D562932B1AE1A37A00FA1B3D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56293351AE1DF9000FA1B3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -207,31 +533,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D55B58F41AD6AE820069BE0A /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nplist=$INFOPLIST_FILE\ndir=\"$(dirname \"$plist\")\"\n\n# Only increment the build number if source files have changed\nif [ -n \"$(find \"$dir\" \\! -path \"*xcuserdata*\" \\! -path \"*.git\" -newer \"$plist\")\" ]; then\nbuildnum=$(/usr/libexec/Plistbuddy -c \"Print CFBundleVersion\" \"$plist\")\nif [ -z \"$buildnum\" ]; then\necho \"No build number in $plist\"\nexit 2\nfi\nbuildnum=$(expr $buildnum + 1)\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"$plist\"\necho \"Incremented build number to $buildnum\"\nelse\necho \"Not incrementing build number as source files have not changed\"\nfi";
+		};
+		D55B594E1AD6B79B0069BE0A /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 28c8692e863cd8d9f1f9575ab4245e49da550d33 6adeeeb04539332d148e32018601616ff797b1d7cf2ff80868b47d1efbdc7fb0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D54A90401AD5FA3B00528425 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D55B59441AD6B15E0069BE0A /* RSDFDatePickerMonthHeader.m in Sources */,
 				D54A904C1AD5FA3B00528425 /* ViewController.swift in Sources */,
+				D55B59431AD6B15E0069BE0A /* RSDFDatePickerDaysOfWeekView.m in Sources */,
+				D55B592E1AD6B1060069BE0A /* RAMPaperSwitch.swift in Sources */,
+				D55B58FD1AD6AFE90069BE0A /* WelcomeController.swift in Sources */,
+				D55B59451AD6B15E0069BE0A /* RSDFDatePickerView.m in Sources */,
+				D55B593F1AD6B15E0069BE0A /* NSCalendar+RSDFAdditions.m in Sources */,
+				D55B58FF1AD6B0080069BE0A /* SetupController.swift in Sources */,
 				D54A904A1AD5FA3B00528425 /* AppDelegate.swift in Sources */,
+				D55B59421AD6B15E0069BE0A /* RSDFDatePickerDayCell.m in Sources */,
+				D5CCADF51AD87885008CE664 /* EnableNotificationsController.swift in Sources */,
+				D55B58F61AD6AF610069BE0A /* SettingsTableViewController.swift in Sources */,
+				D55B59411AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.m in Sources */,
+				D5B41D791ADD81FD00E56477 /* DebugTableViewController.swift in Sources */,
+				D55B59011AD6B01F0069BE0A /* TimingSetupController.swift in Sources */,
+				D55B59401AD6B15E0069BE0A /* RSDFDatePickerCollectionView.m in Sources */,
+				D5B41D7D1ADDBA4F00E56477 /* AMPopTip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D54A90551AD5FA3B00528425 /* Sources */ = {
+		D56293141AE19EBF00FA1B3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D54A90601AD5FA3B00528425 /* Trash_TimeTests.swift in Sources */,
+				D56293201AE19EBF00FA1B3D /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D56293321AE1DF9000FA1B3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56293571AE1DFBC00FA1B3D /* Logic.swift in Sources */,
+				D56293591AE1E8DF00FA1B3D /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D54A905B1AD5FA3B00528425 /* PBXTargetDependency */ = {
+		D56293241AE19EBF00FA1B3D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D54A90431AD5FA3B00528425 /* Trash Time */;
-			targetProxy = D54A905A1AD5FA3B00528425 /* PBXContainerItemProxy */;
+			target = D56293171AE19EBF00FA1B3D /* Today */;
+			targetProxy = D56293231AE19EBF00FA1B3D /* PBXContainerItemProxy */;
+		};
+		D562934D1AE1DF9100FA1B3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D56293361AE1DF9000FA1B3D /* TrashTimeShare */;
+			targetProxy = D562934C1AE1DF9100FA1B3D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -272,7 +658,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -295,6 +681,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -316,7 +703,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Simple Ink";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -332,6 +719,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -340,9 +728,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Trash Time/Trash Time.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Trash\\ Time/Third\\ Party/**",
+				);
 				INFOPLIST_FILE = "Trash Time/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trash Time/BridgingHeader.h";
 			};
 			name = Debug;
 		};
@@ -350,43 +747,98 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Trash Time/Trash Time.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Simple Ink";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Trash\\ Time/Third\\ Party/**",
+				);
 				INFOPLIST_FILE = "Trash Time/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Trash Time/BridgingHeader.h";
 			};
 			name = Release;
 		};
-		D54A90671AD5FA3B00528425 /* Debug */ = {
+		D56293271AE19EC000FA1B3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Trash TimeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trash Time.app/Trash Time";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		D54A90681AD5FA3B00528425 /* Release */ = {
+		D56293281AE19EC000FA1B3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Simple Ink";
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D56293511AE1DF9100FA1B3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Trash TimeTests/Info.plist";
+				INFOPLIST_FILE = TrashTimeShare/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trash Time.app/Trash Time";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D56293521AE1DF9100FA1B3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Simple Ink";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TrashTimeShare/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -409,14 +861,25 @@
 				D54A90651AD5FA3B00528425 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D54A90661AD5FA3B00528425 /* Build configuration list for PBXNativeTarget "Trash TimeTests" */ = {
+		D56293261AE19EC000FA1B3D /* Build configuration list for PBXNativeTarget "Today" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D54A90671AD5FA3B00528425 /* Debug */,
-				D54A90681AD5FA3B00528425 /* Release */,
+				D56293271AE19EC000FA1B3D /* Debug */,
+				D56293281AE19EC000FA1B3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56293501AE1DF9100FA1B3D /* Build configuration list for PBXNativeTarget "TrashTimeShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D56293511AE1DF9100FA1B3D /* Debug */,
+				D56293521AE1DF9100FA1B3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
