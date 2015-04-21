@@ -53,7 +53,7 @@ public class Logic {
         }
         
         self.defaults.synchronize()
-        self.setupNotifications()
+        NSNotificationCenter.defaultCenter().postNotificationName(kSetupNotificationMessage, object: nil)
     }
     
     // MARK: - Trash
@@ -62,7 +62,7 @@ public class Logic {
         self.defaults.setObject(referenceDate, forKey: kTrashReferenceDate)
         self.defaults.synchronize()
         
-        self.setupNotifications()
+        NSNotificationCenter.defaultCenter().postNotificationName(kSetupNotificationMessage, object: nil)
     }
     
     public func hasTrashReferenceDate() -> Bool {
@@ -75,7 +75,7 @@ public class Logic {
         self.defaults.setObject(referenceDate, forKey: kRecyclingReferenceDate)
         self.defaults.synchronize()
         
-        self.setupNotifications()
+        NSNotificationCenter.defaultCenter().postNotificationName(kSetupNotificationMessage, object: nil)
     }
     
     public func hasRecyclingReferenceDate() -> Bool {
@@ -101,18 +101,18 @@ public class Logic {
         
     }
     
-    func getWeekdayFromDate(referenceDate: NSDate) -> Int {
+    public func getWeekdayFromDate(referenceDate: NSDate) -> Int {
         let dateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekday, fromDate: referenceDate)
         return dateComponents.weekday
     }
     
-    func getWeekParityFromDate(referenceDate: NSDate) -> WeekParity {
+    public func getWeekParityFromDate(referenceDate: NSDate) -> WeekParity {
         let dateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekOfYear, fromDate: referenceDate)
         let weekNumber = dateComponents.weekOfYear
         return (weekNumber % 2 == 0 ? .Even : .Odd)
     }
     
-    func getDateReference(type: String) -> NSDate {
+    public func getDateReference(type: String) -> NSDate {
         let referenceDate = self.defaults.objectForKey(type) as! NSDate
         return NSCalendar.currentCalendar().dateBySettingUnit(.CalendarUnitWeekday, value: getWeekdayFromDate(referenceDate), ofDate: referenceDate, options: nil)!
     }
@@ -121,127 +121,6 @@ public class Logic {
         let scheduledTime = NSCalendar.currentCalendar().components((.CalendarUnitHour | .CalendarUnitMinute), fromDate: notificationTime)
         self.defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(scheduledTime), forKey: kScheduledAlertTime)
         self.defaults.synchronize()
-    }
-    
-    // MARK: - Notification
-    public func setupNotifications() {
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), {
-            self.createAllNotifications()
-        })
-    }
-    
-    func createAllNotifications() {
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
-        
-        let trashEnabled = self.trashEnabled()
-        let trashHasDateReference = hasTrashReferenceDate()
-        
-        let recyclingEnabled = self.recyclingEnabled()
-        let recyclingHasDateReference = hasRecyclingReferenceDate()
-        
-        let reminderDateComponents = self.defaults.objectForKey(kScheduledAlertTime) as? NSData
-        
-        if (reminderDateComponents == nil ||
-            (!trashEnabled && !recyclingEnabled) ||
-            (trashEnabled && !trashHasDateReference) ||
-            (recyclingEnabled && !recyclingHasDateReference)) {
-                return
-        }
-        
-        println("Processing Notifications")
-        
-        var firstTrashDate: NSDate?
-        if (trashEnabled && trashHasDateReference) {
-            firstTrashDate = trashNextCollection()
-        }
-        
-        var firstRecyclingDate: NSDate?
-        if (recyclingEnabled && recyclingHasDateReference) {
-            firstRecyclingDate = recyclingNextCollection()
-        }
-        
-        let scheduleFrequency = self.defaults.integerForKey(kScheduledFrequency)
-        
-        var sameWeekday: Bool {
-            get {
-                if (trashEnabled && recyclingEnabled) {
-                    let trashDay = getWeekdayFromDate(firstTrashDate!)
-                    let recyclingDay = getWeekdayFromDate(firstRecyclingDate!)
-                    
-                    if (trashDay == recyclingDay) {
-                        return true;
-                    }
-                    return false
-                }
-                else {
-                    return true
-                }
-            }
-        }
-        
-        var currentDate: NSDate?
-        if (trashEnabled && recyclingEnabled) {
-            currentDate = firstTrashDate!.earlierDate(firstRecyclingDate!)
-        } else {
-            currentDate = (trashEnabled ? firstTrashDate! : firstRecyclingDate!)
-        }
-        
-        while (currentDate?.earlierDate(NSDate()) == currentDate) {
-            currentDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: currentDate!, options: nil)
-        }
-        
-        var currentDay = NSCalendar.currentCalendar().components(.CalendarUnitWeekday, fromDate: currentDate!).weekday
-        
-        let trashDay: Int? = (Logic.instance.hasTrashReferenceDate() ? getWeekdayFromDate(getDateReference(kTrashReferenceDate)) : nil)
-        let recycleDay: Int? = (Logic.instance.hasRecyclingReferenceDate() ? getWeekdayFromDate(getDateReference(kRecyclingReferenceDate)) : nil)
-        
-        mainIteration: for var loopIndex = 0; loopIndex < 52; loopIndex++ {
-            var localNotification = UILocalNotification()
-            localNotification.timeZone = NSCalendar.currentCalendar().timeZone
-            localNotification.soundName = UILocalNotificationDefaultSoundName;
-            localNotification.fireDate = currentDate!
-            
-            if (sameWeekday && trashEnabled && recyclingEnabled && currentDate?.laterDate(firstTrashDate!) == currentDate && currentDate?.laterDate(firstRecyclingDate!) == currentDate && (scheduleFrequency == RecyclingFrequency.Weekly.hashValue || (scheduleFrequency == RecyclingFrequency.BiWeekly.hashValue && self.getWeekParityFromDate(currentDate!) == self.getWeekParityFromDate(firstRecyclingDate!)))) {
-                localNotification.alertBody = "Time to take out the trash and recycling!"
-            }
-            else if (trashEnabled && currentDay == trashDay && currentDate?.laterDate(firstTrashDate!) == currentDate) {
-                localNotification.alertBody = "Time to take out the trash!"
-            }
-            else if (recyclingEnabled && currentDay == recycleDay && currentDate?.laterDate(firstRecyclingDate!) == currentDate && (scheduleFrequency == RecyclingFrequency.Weekly.hashValue || (self.defaults.integerForKey(kScheduledFrequency) == RecyclingFrequency.BiWeekly.hashValue && self.getWeekParityFromDate(currentDate!) == self.getWeekParityFromDate(firstRecyclingDate!)))) {
-                localNotification.alertBody = "Time to take out the recycling!"
-            }
-            
-            if (sameWeekday || (trashEnabled && !recyclingEnabled) || (!trashEnabled && recyclingEnabled)) {
-                currentDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: currentDate!, options: nil)!
-            } else {
-                var daysToAdd = 0
-                if (currentDay == trashDay) {
-                    daysToAdd = recycleDay! - currentDay + (recycleDay! > trashDay! ? 0 : 7)
-                } else {
-                    daysToAdd = trashDay! - currentDay + (trashDay! > recycleDay! ? 0 : 7)
-                }
-                currentDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: daysToAdd, toDate: currentDate!, options: nil)!
-            }
-            currentDay = NSCalendar.currentCalendar().components(.CalendarUnitWeekday, fromDate: currentDate!).weekday
-            
-            if (localNotification.alertBody == nil || localNotification.fireDate == nil) {
-                continue
-            }
-            
-            switch AlertDay(rawValue: self.alertDay()) {
-            case .Some(.DayBefore):
-                let adjustedNotificationDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: localNotification.fireDate!, options: nil)
-                localNotification.fireDate = adjustedNotificationDate
-            case .Some(.DayOf): break
-            case .None: break
-            }
-            
-
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            if UIApplication.sharedApplication().scheduledLocalNotifications.count >= 60 {
-                break mainIteration;
-            }
-        }
     }
     
     // MARK: - Convienence Getters
@@ -457,11 +336,17 @@ public class Logic {
         return self.defaults.boolForKey(kDidAskForNotifications)
     }
     
-    public func requestNotificationPermission() {
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Sound | .Alert | .Badge, categories: nil))
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+    public func setRequestedNotificationPermission() {
         self.defaults.setBool(true, forKey: kDidAskForNotifications)
         self.defaults.synchronize()
+    }
+    
+    public func getScheduleFrequency() -> Int {
+        return self.defaults.integerForKey(kScheduledFrequency)
+    }
+    
+    public func getAlertTime() -> NSData? {
+        return self.defaults.objectForKey(kScheduledAlertTime) as? NSData
     }
     
     // MARK: - Setup
@@ -509,11 +394,11 @@ public class Logic {
     
     let kTrashEnabled = "TrashEnabled"
     let kTrashSchedule = "TrashSchedule"
-    let kTrashReferenceDate = "TrashReferenceDate"
+    public let kTrashReferenceDate = "TrashReferenceDate"
     
     let kRecyclingEnabled = "RecyclingEnabled"
     let kRecyclingSchedule = "RecyclingSchedule"
-    let kRecyclingReferenceDate = "RecyclingReferenceDate"
+    public let kRecyclingReferenceDate = "RecyclingReferenceDate"
     
     let kScheduledAlertTime = "ScheduledTime"
     let kScheduledAlertDay = "ScheduledDay"
@@ -522,6 +407,7 @@ public class Logic {
     
     let kDidInitialSetup = "InitialSetupComplete"
     let kDidAskForNotifications = "AskedForNotifications"
+    let kSetupNotificationMessage = "SetupNotificationMessage"
     
     public enum SectionType {
         case Trash
@@ -533,12 +419,12 @@ public class Logic {
         case DayBefore
     }
     
-    enum WeekParity {
+    public enum WeekParity {
         case Even
         case Odd
     }
     
-    enum RecyclingFrequency {
+    public enum RecyclingFrequency {
         case Weekly
         case BiWeekly
     }

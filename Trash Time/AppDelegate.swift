@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
+        Notifications()
+        
         return true
     }
 
@@ -53,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         Logic.instance.addBackgroundRefreshCount()
 //        UIApplication.sharedApplication().applicationIconBadgeNumber = Logic.instance.getBackgroundRefreshCount()
-        Logic.instance.setupNotifications()
+        Notifications.instance.setupNotifications()
         completionHandler(UIBackgroundFetchResult.NoData)
     }
 

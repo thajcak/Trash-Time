@@ -50,6 +50,7 @@
 		D5B41D791ADD81FD00E56477 /* DebugTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */; };
 		D5B41D7D1ADDBA4F00E56477 /* AMPopTip.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B41D7C1ADDBA4F00E56477 /* AMPopTip.m */; };
 		D5CCADF51AD87885008CE664 /* EnableNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCADF41AD87885008CE664 /* EnableNotificationsController.swift */; };
+		D5E2C69E1AE6D3ED001B532E /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2C69D1AE6D3ED001B532E /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		D5B41D7B1ADDBA4F00E56477 /* AMPopTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopTip.h; sourceTree = "<group>"; };
 		D5B41D7C1ADDBA4F00E56477 /* AMPopTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPopTip.m; sourceTree = "<group>"; };
 		D5CCADF41AD87885008CE664 /* EnableNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnableNotificationsController.swift; sourceTree = "<group>"; };
+		D5E2C69D1AE6D3ED001B532E /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				D54A904B1AD5FA3B00528425 /* ViewController.swift */,
 				D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */,
 				D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */,
+				D5E2C69D1AE6D3ED001B532E /* Notifications.swift */,
 				D55B58FB1AD6AFD40069BE0A /* Intro */,
 				D54A90471AD5FA3B00528425 /* Supporting Files */,
 				D55B59021AD6B0B40069BE0A /* Third Party */,
@@ -332,7 +335,6 @@
 			isa = PBXGroup;
 			children = (
 				D562931F1AE19EBF00FA1B3D /* TodayViewController.swift */,
-				D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */,
 				D562931D1AE19EBF00FA1B3D /* Supporting Files */,
 			);
 			path = Today;
@@ -341,6 +343,7 @@
 		D562931D1AE19EBF00FA1B3D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */,
 				D562935B1AE1ECA400FA1B3D /* Today.entitlements */,
 				D562931E1AE19EBF00FA1B3D /* Info.plist */,
 			);
@@ -581,6 +584,7 @@
 				D55B59421AD6B15E0069BE0A /* RSDFDatePickerDayCell.m in Sources */,
 				D5CCADF51AD87885008CE664 /* EnableNotificationsController.swift in Sources */,
 				D55B58F61AD6AF610069BE0A /* SettingsTableViewController.swift in Sources */,
+				D5E2C69E1AE6D3ED001B532E /* Notifications.swift in Sources */,
 				D55B59411AD6B15E0069BE0A /* RSDFDatePickerCollectionViewLayout.m in Sources */,
 				D5B41D791ADD81FD00E56477 /* DebugTableViewController.swift in Sources */,
 				D55B59011AD6B01F0069BE0A /* TimingSetupController.swift in Sources */,
@@ -797,7 +801,7 @@
 		D56293511AE1DF9100FA1B3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -823,7 +827,7 @@
 		D56293521AE1DF9100FA1B3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Simple Ink";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

@@ -21,7 +21,7 @@ class EnableNotificationsController : UIViewController {
         
         func finalizeSetup() {
             Logic.instance.setWelcomeComplete()
-            Logic.instance.setupNotifications()
+            Notifications.instance.setupNotifications()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
@@ -29,6 +29,6 @@ class EnableNotificationsController : UIViewController {
     }
     
     @IBAction func askForNotifications(sender: AnyObject) {
-        Logic.instance.requestNotificationPermission()
+        Notifications.instance.requestNotificationPermission()
     }
 }

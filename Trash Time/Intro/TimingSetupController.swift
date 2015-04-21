@@ -44,7 +44,7 @@ class TimingSetupController : UIViewController, UIPickerViewDelegate {
             self.performSegueWithIdentifier("Request Notifications", sender: self)
         } else {
             Logic.instance.setWelcomeComplete()
-            Logic.instance.setupNotifications()
+            Notifications.instance.setupNotifications()
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }

@@ -83,9 +83,9 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
                 self.nextButton.enabled = true
             }
             
-            UIView.transitionWithView(self.mainIconImage,
-                duration: self.toggleSwitch.duration,
-                options: UIViewAnimationOptions.TransitionCrossDissolve,
+            UIView.animateWithDuration(self.toggleSwitch.duration,
+                delay: 0,
+                options: .TransitionCrossDissolve,
                 animations: {
                     self.mainIconImage.highlighted = onAnimation
                     UIApplication.sharedApplication().setStatusBarStyle((onAnimation ? UIStatusBarStyle.LightContent : UIStatusBarStyle.Default), animated: true)
@@ -93,9 +93,11 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
                     self.nextButton.title = ""
                 },
                 completion: {(finished: Bool) in
-                    UIView.transitionWithView(self.view,
-                        duration: self.toggleSwitch.duration,
-                        options: UIViewAnimationOptions.CurveEaseInOut,
+                    UIView.animateWithDuration(0.6,
+                        delay: 0,
+                        usingSpringWithDamping: 0.7,
+                        initialSpringVelocity: 0.3,
+                        options: .CurveEaseInOut,
                         animations: {
                             self.nextButton.title = (onAnimation ? "Continue" : "Skip")
                             self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? UIColor.whiteColor() : self.colorForSetupType())

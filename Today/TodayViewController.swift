@@ -28,7 +28,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         updateLabels()
-        Logic.instance.setupNotifications()
+//        Logic.instance.setupNotifications()
         // Perform any setup necessary in order to update the view.
         
         // If an error is encountered, use NCUpdateResult.Failed

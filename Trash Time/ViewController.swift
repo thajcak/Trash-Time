@@ -42,6 +42,9 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
         
         self.calendarView.delegate = self
         
+        self.trashSwitch.onTintColor = Theme.ImageColor.Blue.color()
+        self.recycleSwitch.onTintColor = Theme.ImageColor.Green.color()
+        
         // Setup transition for icons when switch is flicked
         trashSwitch.animationDidStartClosure = {(onAnimation: Bool) in
             if (self.logic.hasTrashReferenceDate()) {
@@ -72,8 +75,8 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
         self.setSectionVisibility(.Trash, enable: trashEnabled, animate: false)
         
         let recyclingEnabled = logic.recyclingEnabled()
-        self.recycleSwitch.on = recyclingEnabled
-        self.recycleSwitch.awakeFromNib()
+        self.recycleSwitch.setOn(recyclingEnabled, animated: true)
+//        self.recycleSwitch.
         self.setSectionVisibility(.Recycling, enable: recyclingEnabled, animate: false)
         
         setScheduleButtonLabel()
@@ -141,7 +144,6 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                     self.trashCountdownView.alpha = (enable ? 1 : 0)
                     self.trashSettingsButton.enabled = enable
                     self.trashIconButton.enabled = enable
-                    self.view.layoutIfNeeded()
                 case .Recycling:
                     self.recyclingShadowView.alpha = (enable ? 1 : 0)
                     self.recycleImageView.alpha = (enable ? 0 : 1)
@@ -149,8 +151,8 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                     self.recyclingCountdownView.alpha = (enable ? 1 : 0)
                     self.recyclingSettingsButton.enabled = enable
                     self.recyclingIconButton.enabled = enable
-                    self.view.layoutIfNeeded()
                 }
+                self.view.layoutIfNeeded()
             },
             completion: {(finished: Bool) in
                 switch section {
@@ -168,7 +170,6 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     }
     
     func setScheduleButtonLabel() {
-        println("\(UIApplication.sharedApplication().currentUserNotificationSettings().types.rawValue)")
         if (UIApplication.sharedApplication().currentUserNotificationSettings().types == UIUserNotificationType.None) {
             self.reminderTimeButton.title = "Notifications Disabled"
         }
@@ -216,14 +217,18 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
         case .Some(.Trash):
             if (logic.hasTrashReferenceDate()) {
                 self.calendarView.selectDate(logic.trashNextCollection())
+            } else {
+                self.calendarView.selectDate(nil)
             }
             calendarType = "Trash"
         case .Some(.Recycling):
             if (logic.hasRecyclingReferenceDate()) {
                 self.calendarView.selectDate(logic.recyclingNextCollection())
+            } else {
+                self.calendarView.selectDate(nil)
             }
             calendarType = "Recycling"
-        case .None: break
+        default: break
         }
         
         self.calendarMessageLabel.text = "When is your next \(calendarType) collection?"
@@ -239,6 +244,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                 if (sender.tag == SectionType.Recycling.rawValue) {
                     self.calendarParitySegmentedControl.alpha = 1
                 }
+                self.view.layoutIfNeeded()
             },
             completion: nil
         )
@@ -251,7 +257,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
             if (logic.didRequestNotificationPermission()) {
                 UIAlertView(title: "Notifications Disabled", message: "To turn them back on open the Settings app from your home screen, scroll down until you find Trash Time, and turn on notifications.", delegate: self, cancelButtonTitle: "Okay").show()
             } else {
-                logic.requestNotificationPermission()
+                Notifications.instance.requestNotificationPermission()
             }
         }
         else if (self.timeSelectionViewVerticalPosition.constant == -self.timeSelectionContainer.frame.height) {
@@ -270,6 +276,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                 animations: {
                     self.timeSelectionViewVerticalPosition.constant = -self.timeSelectionContainer.frame.height
                     self.setOverlayValues()
+                    self.view.layoutIfNeeded()
                 },
                 completion: nil
             )
@@ -313,7 +320,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
             delay: 0,
             usingSpringWithDamping: 0.7,
             initialSpringVelocity: 0.1,
-            options: .CurveEaseInOut,
+            options: .CurveEaseIn,
             animations: {
                 self.timeSelectionViewVerticalPosition.constant = 0
                 self.overlaySpacerVerticalPosition.constant = self.view.frame.height
@@ -346,7 +353,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
             }
         )
         
-        logic.setupNotifications()
+        Notifications.instance.setupNotifications()
     }
     
     // MARK: - Actions
@@ -400,10 +407,11 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
         switch currentSection {
         case .Some(.Trash):
             logic.setTrashReferenceDate(date)
+            self.logic.setSectionEnabled(Logic.SectionType.Trash, enabled: true)
         case .Some(.Recycling):
             logic.setRecyclingReferenceDate(date)
-        case .None:
-            break
+            self.logic.setSectionEnabled(Logic.SectionType.Recycling, enabled: true)
+        default: break
         }
     }
     
