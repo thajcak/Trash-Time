@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Crashlytics
+import TrashTimeShare
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Crashlytics.startWithAPIKey("28c8692e863cd8d9f1f9575ab4245e49da550d33")
+        
+        SupportKit.initWithSettings(SKTSettings(appToken: "ap4bo8nsogtgswrceau24y3ti"))
+        
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
         return true
     }
 
@@ -27,10 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        Logic.instance.resetBackgroundRefreshCount()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        NSNotificationCenter.defaultCenter().postNotificationName("ENTERED_FOREGROUND", object: nil);
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -41,6 +50,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        Logic.instance.addBackgroundRefreshCount()
+//        UIApplication.sharedApplication().applicationIconBadgeNumber = Logic.instance.getBackgroundRefreshCount()
+        Logic.instance.setupNotifications()
+        completionHandler(UIBackgroundFetchResult.NoData)
+    }
 
 }
 
