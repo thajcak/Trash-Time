@@ -106,7 +106,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAYS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG0-Vp-xxn">
-                                                <rect key="frame" x="0.0" y="209" width="396" height="21"/>
+                                                <rect key="frame" x="0.0" y="209" width="396" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="7hd-Zm-4Vg"/>
@@ -114,6 +114,11 @@
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="7hd-Zm-4Vg"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="calibratedRGB"/>
@@ -122,6 +127,7 @@
                                             <constraint firstAttribute="height" constant="20" id="6o3-vZ-nGS"/>
                                             <constraint firstAttribute="trailing" secondItem="BG0-Vp-xxn" secondAttribute="trailing" id="76r-KC-7NU"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="3" id="7Oj-2t-TCx"/>
+                                            <constraint firstItem="BG0-Vp-xxn" firstAttribute="height" secondItem="lep-X4-NSR" secondAttribute="height" multiplier="0.125" id="8Iq-d2-OKX"/>
                                             <constraint firstItem="BG0-Vp-xxn" firstAttribute="top" secondItem="zQc-7r-E29" secondAttribute="bottom" constant="8" id="Jks-0f-YZx"/>
                                             <constraint firstItem="zQc-7r-E29" firstAttribute="height" secondItem="lep-X4-NSR" secondAttribute="height" multiplier="0.75" id="WrD-Pr-J5l"/>
                                             <constraint firstItem="zQc-7r-E29" firstAttribute="top" secondItem="lep-X4-NSR" secondAttribute="top" id="aVh-YD-hq8"/>
@@ -265,7 +271,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAYS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncr-JE-Ncs">
-                                                <rect key="frame" x="0.0" y="209" width="396" height="35"/>
+                                                <rect key="frame" x="0.0" y="209" width="396" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="OQM-Tp-Av6"/>
@@ -284,7 +290,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.25" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="Ncr-JE-Ncs" firstAttribute="height" secondItem="cjX-Tq-IjD" secondAttribute="height" multiplier="0.125" constant="1" id="0Nx-N9-hgk"/>
+                                            <constraint firstItem="Ncr-JE-Ncs" firstAttribute="height" secondItem="cjX-Tq-IjD" secondAttribute="height" multiplier="0.125" id="0Nx-N9-hgk"/>
                                             <constraint firstItem="Ncr-JE-Ncs" firstAttribute="top" secondItem="nLb-uG-nRf" secondAttribute="bottom" constant="8" id="1iu-rg-kSk"/>
                                             <constraint firstItem="nLb-uG-nRf" firstAttribute="height" secondItem="cjX-Tq-IjD" secondAttribute="height" multiplier="0.75" id="4jI-bi-e4u"/>
                                             <constraint firstItem="nLb-uG-nRf" firstAttribute="top" secondItem="cjX-Tq-IjD" secondAttribute="top" id="6Jr-ge-C6u"/>
