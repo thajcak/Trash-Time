@@ -144,6 +144,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                     self.trashCountdownView.alpha = (enable ? 1 : 0)
                     self.trashSettingsButton.enabled = enable
                     self.trashIconButton.enabled = enable
+                    self.trashContainerView.backgroundColor = (enable ? Theme.ImageColor.Blue.color() : Theme.ImageColor.White.color())
                 case .Recycling:
                     self.recyclingShadowView.alpha = (enable ? 1 : 0)
                     self.recycleImageView.alpha = (enable ? 0 : 1)
@@ -151,6 +152,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                     self.recyclingCountdownView.alpha = (enable ? 1 : 0)
                     self.recyclingSettingsButton.enabled = enable
                     self.recyclingIconButton.enabled = enable
+                    self.recyclingContainerView.backgroundColor = (enable ? Theme.ImageColor.Green.color() : Theme.ImageColor.White.color())
                 }
                 self.view.layoutIfNeeded()
             },
@@ -160,10 +162,12 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                     if (enable && !self.logic.hasTrashReferenceDate()) {
                         self.showCalendar(self.trashSettingsButton)
                     }
+                    
                 case .Recycling:
                     if (enable && !self.logic.hasRecyclingReferenceDate()) {
                         self.showCalendar(self.recyclingSettingsButton)
                     }
+                    
                 }
             }
         )
@@ -439,6 +443,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     
     // MARK: - Outlets
     
+    @IBOutlet weak var trashContainerView: UIView!
     @IBOutlet weak var trashCountdownView: UIView!
     @IBOutlet weak var trashNextCollectionLabel: UILabel!
     @IBOutlet weak var trashShadowView: UIView!
@@ -449,6 +454,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     @IBOutlet weak var trashSwitch: RAMPaperSwitch!
     @IBOutlet weak var trashSettingsButton: UIButton!
     
+    @IBOutlet weak var recyclingContainerView: UIView!
     @IBOutlet weak var recyclingCountdownView: UIView!
     @IBOutlet weak var recyclingNextCollectionLabel: UILabel!
     @IBOutlet weak var recyclingShadowView: UIView!

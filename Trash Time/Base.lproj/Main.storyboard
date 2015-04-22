@@ -626,6 +626,7 @@
                         <outlet property="overlayView" destination="LQR-fM-Ss9" id="a3k-kM-q41"/>
                         <outlet property="recycleImageView" destination="XZp-Dq-Ekt" id="QF1-dX-Zhp"/>
                         <outlet property="recycleSwitch" destination="rJX-zK-oMr" id="S1b-SB-XhP"/>
+                        <outlet property="recyclingContainerView" destination="PX1-wn-929" id="o2x-8O-L7N"/>
                         <outlet property="recyclingCountdownView" destination="cjX-Tq-IjD" id="XPb-Cd-mgP"/>
                         <outlet property="recyclingCountdownViewLeadingSpace" destination="2Il-Qd-WJn" id="9Dw-4o-I5i"/>
                         <outlet property="recyclingIconButton" destination="o2c-WQ-mMs" id="5RX-NQ-T3s"/>
@@ -639,6 +640,7 @@
                         <outlet property="scheduleToolbar" destination="YiM-xV-zKM" id="Jsu-jr-S3P"/>
                         <outlet property="timeSelectionContainer" destination="Muz-BL-CSS" id="cfr-UT-7df"/>
                         <outlet property="timeSelectionViewVerticalPosition" destination="iBS-ks-KiT" id="a07-y2-Ul9"/>
+                        <outlet property="trashContainerView" destination="UMJ-kT-gJc" id="rDA-Po-a7g"/>
                         <outlet property="trashCountdownView" destination="lep-X4-NSR" id="ukf-Dk-bHZ"/>
                         <outlet property="trashCountdownViewLeadingSpace" destination="Yew-Hr-qI5" id="RJT-yN-VDx"/>
                         <outlet property="trashIconButton" destination="4Pd-ck-Z4G" id="xJP-ao-G0a"/>
