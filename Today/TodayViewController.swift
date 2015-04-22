@@ -18,7 +18,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateLabels", name: NSUserDefaultsDidChangeNotification, object: nil)
         
-        updateLabels()
+//        updateLabels()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,8 +46,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let nextCollectionInfo = Logic.instance.nextCollection()
         self.nextCollection.text = nextCollectionInfo.0
         
-        self.trashIcon.image = Theme.fillImage(self.trashIcon.image!, color: (nextCollectionInfo.1 ? Theme.ImageColor.White : Theme.ImageColor.Gray))
-        self.recyclingIcon.image = Theme.fillImage(self.recyclingIcon.image!, color: (nextCollectionInfo.2 ? Theme.ImageColor.White : Theme.ImageColor.Gray))
+        self.trashIcon.image = Theme.fillImage(self.trashIcon.image!, color: (nextCollectionInfo.1 ? Theme.Color.White : Theme.Color.Black))
+        self.recyclingIcon.image = Theme.fillImage(self.recyclingIcon.image!, color: (nextCollectionInfo.2 ? Theme.Color.White : Theme.Color.Black))
     }
     
     @IBOutlet weak var trashIcon: UIImageView!

@@ -361,6 +361,15 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIs-vc-fNh">
+                                                                <rect key="frame" x="16" y="28" width="568" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="U9f-aH-aSJ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRr-PZ-PRw" userLabel="Vertical Spacer">
                                                                 <rect key="frame" x="290" y="0.0" width="20" height="600"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -406,15 +415,18 @@
                                                             <constraint firstItem="lRr-PZ-PRw" firstAttribute="width" secondItem="h9z-al-pNU" secondAttribute="width" id="A9R-LV-V2x"/>
                                                             <constraint firstAttribute="centerX" secondItem="h9z-al-pNU" secondAttribute="centerX" id="B5n-2D-HMt"/>
                                                             <constraint firstItem="SuC-Fy-226" firstAttribute="top" secondItem="h9z-al-pNU" secondAttribute="bottom" constant="8" id="Fgf-Qu-XyS"/>
+                                                            <constraint firstAttribute="trailing" secondItem="wIs-vc-fNh" secondAttribute="trailing" constant="16" id="Z3m-ri-s0O"/>
                                                             <constraint firstItem="h9z-al-pNU" firstAttribute="width" secondItem="fnM-eB-CYn" secondAttribute="width" multiplier="0.8" id="ZFQ-bS-c8M"/>
                                                             <constraint firstAttribute="centerX" secondItem="lRr-PZ-PRw" secondAttribute="centerX" id="gbB-1m-s14"/>
                                                             <constraint firstAttribute="bottom" secondItem="lRr-PZ-PRw" secondAttribute="bottom" id="iGv-ea-rKg"/>
+                                                            <constraint firstItem="wIs-vc-fNh" firstAttribute="top" secondItem="zQZ-vv-DFo" secondAttribute="top" constant="28" id="mrE-oC-tEs"/>
                                                             <constraint firstAttribute="bottom" secondItem="h9z-al-pNU" secondAttribute="bottom" id="n0m-LN-yQY"/>
                                                             <constraint firstAttribute="trailing" secondItem="SuC-Fy-226" secondAttribute="trailing" constant="8" id="nhw-NF-VtE"/>
                                                             <constraint firstItem="lRr-PZ-PRw" firstAttribute="top" secondItem="zQZ-vv-DFo" secondAttribute="top" id="oyT-on-ffc"/>
                                                             <constraint firstItem="fnM-eB-CYn" firstAttribute="leading" secondItem="zQZ-vv-DFo" secondAttribute="leading" id="pZV-Cl-ZCb"/>
                                                             <constraint firstItem="SuC-Fy-226" firstAttribute="leading" secondItem="zQZ-vv-DFo" secondAttribute="leading" constant="8" id="qsj-PC-ch1"/>
                                                             <constraint firstAttribute="centerX" secondItem="ci6-dl-YP4" secondAttribute="centerX" id="ri4-jn-Tj4"/>
+                                                            <constraint firstItem="wIs-vc-fNh" firstAttribute="leading" secondItem="zQZ-vv-DFo" secondAttribute="leading" constant="16" id="stn-sB-33N"/>
                                                             <constraint firstItem="lRr-PZ-PRw" firstAttribute="centerY" secondItem="ci6-dl-YP4" secondAttribute="centerY" id="xSt-iN-kuq"/>
                                                         </constraints>
                                                         <variation key="default">
@@ -988,7 +1000,29 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Notification Messages" footerTitle="These are the messages that show up when it's time to take your trash and recycling out." id="0eJ-8b-8Qo">
+                            <tableViewSection headerTitle="Need Help?" id="ShI-Ar-e2j">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="onX-le-gVp" style="IBUITableViewCellStyleDefault" id="ugy-21-tuE">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ugy-21-tuE" id="sBv-0g-fcp">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Reach out to me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="onX-le-gVp">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <gestureRecognizers/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="9EP-XA-iNz" appends="YES" id="BtH-K0-fTY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Customize Messages [Coming Soon]" footerTitle="These are the messages that show up when it's time to take your trash and recycling out." id="0eJ-8b-8Qo">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Wtk-aF-rE5" style="IBUITableViewCellStyleDefault" id="2Kl-en-vn7">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1034,14 +1068,46 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Need Help?" id="ShI-Ar-e2j">
+                            <tableViewSection headerTitle="Change Colors [Coming Soon]" id="wga-mx-otg">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="onX-le-gVp" style="IBUITableViewCellStyleDefault" id="ugy-21-tuE">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="jXW-1s-b0y" style="IBUITableViewCellStyleDefault" id="Yf3-DZ-yiB">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ugy-21-tuE" id="sBv-0g-fcp">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yf3-DZ-yiB" id="g31-tf-BnG">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Reach out to me!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="onX-le-gVp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Trash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jXW-1s-b0y">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="lSz-lJ-0z5" style="IBUITableViewCellStyleDefault" id="rCx-we-z93">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rCx-we-z93" id="H2l-mH-wBJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Recycling" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lSz-lJ-0z5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Am I helpful?" id="4ah-3D-YUz">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="602-E6-OM6" style="IBUITableViewCellStyleDefault" id="xyI-JL-wEV">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xyI-JL-wEV" id="b5T-yj-rMT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Leave a Rating or Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="602-E6-OM6">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1050,13 +1116,25 @@
                                             </subviews>
                                             <gestureRecognizers/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="9EP-XA-iNz" appends="YES" id="BtH-K0-fTY"/>
-                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BGC-lF-g7J" style="IBUITableViewCellStyleDefault" id="p68-zw-sbM">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p68-zw-sbM" id="b8q-nh-CEx">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Let your friends know about me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BGC-lF-g7J">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <gestureRecognizers/>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Danger!" footerTitle="Don't you love me?" id="h6h-wR-sRK" userLabel="Reset">
+                            <tableViewSection headerTitle="Danger!" id="h6h-wR-sRK" userLabel="Reset">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8NU-cz-y18" style="IBUITableViewCellStyleDefault" id="KzB-WJ-4ZS">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1074,16 +1152,6 @@
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="iQZ-f7-JBj" appends="YES" id="8ke-Iv-ejk"/>
                                         </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Additional Resources" id="YlU-9U-MdF">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aU0-Av-acU">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aU0-Av-acU" id="vLj-U5-dtL">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1357,7 +1425,7 @@ You can change this later by opening the iOS Settings app and finding Trash Time
         <!--Navigation Controller-->
         <scene sceneID="C6X-Jc-IBK">
             <objects>
-                <navigationController toolbarHidden="NO" id="VBL-Jd-qaV" sceneMemberID="viewController">
+                <navigationController id="VBL-Jd-qaV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gao-L4-nMn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -27,7 +27,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         self.overlayView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
-        self.overlayView.backgroundColor = UIColor(white: 0.0, alpha: 0.4)
+        self.overlayView.backgroundColor = Theme.Color.White.color()
         self.overlayView.alpha = 0
         self.overlayView.hidden = true
         self.navigationController?.view.addSubview(self.overlayView)

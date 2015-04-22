@@ -23,10 +23,10 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trashPopOver.popoverColor = UIColor.whiteColor()
-        trashPopOver.textColor = UIColor.blackColor()
-        recyclingPopOver.popoverColor = UIColor.whiteColor()
-        recyclingPopOver.textColor = UIColor.blackColor()
+        trashPopOver.popoverColor = Theme.Color.White.color()
+        trashPopOver.textColor = Theme.Color.Black.color()
+        recyclingPopOver.popoverColor = Theme.Color.White.color()
+        recyclingPopOver.textColor = Theme.Color.Black.color()
         
         func addShadow(view: UIView) {
             view.layer.shadowColor = UIColor.blackColor().CGColor
@@ -42,8 +42,8 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
         
         self.calendarView.delegate = self
         
-        self.trashSwitch.onTintColor = Theme.ImageColor.Blue.color()
-        self.recycleSwitch.onTintColor = Theme.ImageColor.Green.color()
+        self.trashSwitch.onTintColor = Theme.Color.Blue.color()
+        self.recycleSwitch.onTintColor = Theme.Color.Green.color()
         
         // Setup transition for icons when switch is flicked
         trashSwitch.animationDidStartClosure = {(onAnimation: Bool) in
@@ -59,7 +59,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
             self.setSectionVisibility(.Recycling, enable: onAnimation)
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setCountdownValues", name: "ENTERED_FOREGROUND", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateDisplay", name: "ENTERED_FOREGROUND", object: nil)
     }
     
     deinit {
@@ -70,17 +70,14 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
         setupImages()
         
         let trashEnabled = logic.trashEnabled()
-        self.trashSwitch.on = trashEnabled
-        self.trashSwitch.awakeFromNib()
+        self.trashSwitch.setOn(trashEnabled, animated: true)
         self.setSectionVisibility(.Trash, enable: trashEnabled, animate: false)
         
         let recyclingEnabled = logic.recyclingEnabled()
         self.recycleSwitch.setOn(recyclingEnabled, animated: true)
-//        self.recycleSwitch.
         self.setSectionVisibility(.Recycling, enable: recyclingEnabled, animate: false)
         
-        setScheduleButtonLabel()
-        setCountdownValues()
+        updateDisplay()
         
         if (!logic.initialSetupComplete()) {
             self.fadeOverlay.alpha = 1.0
@@ -112,22 +109,26 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     
     // MARK: - Interface Updates
     
+    func updateDisplay() {
+        setScheduleButtonLabel()
+        setCountdownValues()
+    }
+    
     func setupImages() {
-        self.trashImageView.image = Theme.fillImage(UIImage(named: "Trash")!, color: Theme.ImageColor.Blue)
-        self.trashIconButton.setImage(Theme.fillImage(UIImage(named: "Trash Small")!, color: Theme.ImageColor.White), forState: .Normal)
-        self.trashSettingsButton.setImage(Theme.fillImage(UIImage(named: "Gear")!, color: Theme.ImageColor.White), forState: .Normal)
+        self.trashImageView.image = Theme.fillImage(UIImage(named: "Trash")!, color: Theme.Color.Blue)
+        self.trashIconButton.setImage(Theme.fillImage(UIImage(named: "Trash Small")!, color: Theme.Color.White), forState: .Normal)
+        self.trashSettingsButton.setImage(Theme.fillImage(UIImage(named: "Gear")!, color: Theme.Color.White), forState: .Normal)
         
-        self.recycleImageView.image = Theme.fillImage(UIImage(named: "Recycle")!, color: Theme.ImageColor.Green)
-        self.recyclingIconButton.setImage(Theme.fillImage(UIImage(named: "Recycle Small")!, color: Theme.ImageColor.White), forState: .Normal)
-        self.recyclingSettingsButton.setImage(Theme.fillImage(UIImage(named: "Gear")!, color: Theme.ImageColor.White), forState: .Normal)
+        self.recycleImageView.image = Theme.fillImage(UIImage(named: "Recycle")!, color: Theme.Color.Green)
+        self.recyclingIconButton.setImage(Theme.fillImage(UIImage(named: "Recycle Small")!, color: Theme.Color.White), forState: .Normal)
+        self.recyclingSettingsButton.setImage(Theme.fillImage(UIImage(named: "Gear")!, color: Theme.Color.White), forState: .Normal)
     }
     
     func setSectionVisibility(section: SectionType, enable: Bool) {
         setSectionVisibility(section, enable: enable, animate: true)
     }
     func setSectionVisibility(section: SectionType, enable: Bool, animate: Bool) {
-        setScheduleButtonLabel()
-        setCountdownValues()
+        updateDisplay()
         
         UIView.animateWithDuration(
             (animate ? kSettingsAnimationDuration : 0),
@@ -144,7 +145,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                     self.trashCountdownView.alpha = (enable ? 1 : 0)
                     self.trashSettingsButton.enabled = enable
                     self.trashIconButton.enabled = enable
-                    self.trashContainerView.backgroundColor = (enable ? Theme.ImageColor.Blue.color() : Theme.ImageColor.White.color())
+                    self.trashContainerView.backgroundColor = (enable ? Theme.Color.Blue.color() : Theme.Color.White.color())
                 case .Recycling:
                     self.recyclingShadowView.alpha = (enable ? 1 : 0)
                     self.recycleImageView.alpha = (enable ? 0 : 1)
@@ -152,7 +153,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                     self.recyclingCountdownView.alpha = (enable ? 1 : 0)
                     self.recyclingSettingsButton.enabled = enable
                     self.recyclingIconButton.enabled = enable
-                    self.recyclingContainerView.backgroundColor = (enable ? Theme.ImageColor.Green.color() : Theme.ImageColor.White.color())
+                    self.recyclingContainerView.backgroundColor = (enable ? Theme.Color.Green.color() : Theme.Color.White.color())
                 }
                 self.view.layoutIfNeeded()
             },
@@ -259,7 +260,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     @IBAction func showTimeSelection(sender: UIBarButtonItem) {
         if (UIApplication.sharedApplication().currentUserNotificationSettings().types == UIUserNotificationType.None) {
             if (logic.didRequestNotificationPermission()) {
-                UIAlertView(title: "Notifications Disabled", message: "To turn them back on open the Settings app from your home screen, scroll down until you find Trash Time, and turn on notifications.", delegate: self, cancelButtonTitle: "Okay").show()
+                UIAlertView(title: "Notifications Disabled", message: "To turn on notifications open the Settings app from your home screen, scroll down until you find Trash Time, and switch notifications on.", delegate: self, cancelButtonTitle: "Okay").show()
             } else {
                 Notifications.instance.requestNotificationPermission()
             }
@@ -299,10 +300,10 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
                 var verticalPosition: CGFloat = 0
                 switch overlayType {
                 case .TimePicker:
-                    self.overlayImage.image = Theme.fillImage(UIImage(named:"Alarm")!, color: Theme.ImageColor.White)
+                    self.overlayImage.image = Theme.fillImage(UIImage(named:"Alarm")!, color: Theme.Color.White)
                     verticalPosition = self.timeSelectionContainer.frame.height + self.scheduleToolbar.frame.height
                 case .Calendar:
-                    self.overlayImage.image = Theme.fillImage(UIImage(named:"Calendar")!, color: Theme.ImageColor.White)
+                    self.overlayImage.image = Theme.fillImage(UIImage(named:"Calendar")!, color: Theme.Color.White)
                     verticalPosition = self.calendarView.frame.height
                 }
                 
@@ -315,8 +316,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     }
     
     @IBAction func closeOverlay(sender: AnyObject) {
-        setCountdownValues()
-        setScheduleButtonLabel()
+        updateDisplay()
         
         currentSection = nil
         
@@ -422,7 +422,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     // MARK: - Alert View Delegate
     
     func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-        self.setScheduleButtonLabel()
+        updateDisplay()
     }
     
     // MARK: - Enums

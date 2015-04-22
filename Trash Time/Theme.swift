@@ -10,11 +10,12 @@ import UIKit
 
 public class Theme {
     
-    public enum ImageColor {
+    public enum Color {
         case White
         case Blue
         case Green
         case Gray
+        case Black
         
         public func color() -> UIColor {
             switch (self) {
@@ -22,11 +23,12 @@ public class Theme {
             case .Blue: return UIColor(red: CGFloat(49.0/255.0), green: CGFloat(130.0/255.0), blue: CGFloat(217.0/255.0), alpha: 1)
             case .Green: return UIColor(red: CGFloat(49.0/255.0), green: CGFloat(163.0/255.0), blue: CGFloat(67.0/255.0), alpha: 1)
             case .Gray: return UIColor(white: 0.35, alpha: 1.0)
+            case .Black: return UIColor.blackColor()
             }
         }
     }
 
-    public static func fillImage(image: UIImage, color: ImageColor) -> UIImage {
+    public static func fillImage(image: UIImage, color: Color) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(image.size, false, UIScreen.mainScreen().scale)
         let context = UIGraphicsGetCurrentContext()
         color.color().setFill()

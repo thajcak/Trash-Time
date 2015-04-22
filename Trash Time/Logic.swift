@@ -133,7 +133,7 @@ public class Logic {
         let reminderDateComponents = self.defaults.objectForKey(kScheduledAlertTime) as? NSData
         let savedReminderTime = NSKeyedUnarchiver.unarchiveObjectWithData(reminderDateComponents!) as! NSDateComponents
         
-        var collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kTrashReferenceDate), options: nil)!
+        var collectionDate = getDateReference(kTrashReferenceDate)
         while (collectionDate.earlierDate(NSDate()) == collectionDate) {
             collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: collectionDate, options: nil)!
         }
@@ -148,7 +148,7 @@ public class Logic {
         let reminderDateComponents = self.defaults.objectForKey(kScheduledAlertTime) as? NSData
         let savedReminderTime = NSKeyedUnarchiver.unarchiveObjectWithData(reminderDateComponents!) as! NSDateComponents
         
-        var collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kRecyclingReferenceDate), options: nil)!
+        var collectionDate = getDateReference(kRecyclingReferenceDate)
         while (collectionDate.earlierDate(NSDate()) == collectionDate) {
             collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: (self.recyclingFrequency()+1), toDate: collectionDate, options: nil)!
         }

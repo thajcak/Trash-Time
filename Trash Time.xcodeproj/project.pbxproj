@@ -198,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				D54A90461AD5FA3B00528425 /* Trash Time */,
+				D55B59021AD6B0B40069BE0A /* Third Party */,
 				D562931C1AE19EBF00FA1B3D /* Today */,
 				D56293381AE1DF9000FA1B3D /* TrashTimeShare */,
 				D56293191AE19EBF00FA1B3D /* Frameworks */,
@@ -225,7 +226,6 @@
 				D5E2C69D1AE6D3ED001B532E /* Notifications.swift */,
 				D55B58FB1AD6AFD40069BE0A /* Intro */,
 				D54A90471AD5FA3B00528425 /* Supporting Files */,
-				D55B59021AD6B0B40069BE0A /* Third Party */,
 				D56293101AE1681000FA1B3D /* Frameworks */,
 			);
 			path = "Trash Time";
@@ -264,7 +264,8 @@
 				D56292F91AE1675F00FA1B3D /* SupportKit */,
 				D55B594F1AD6B7BC0069BE0A /* Crashlytics.framework */,
 			);
-			path = "Third Party";
+			name = "Third Party";
+			path = "Trash Time/Third Party";
 			sourceTree = "<group>";
 		};
 		D55B592C1AD6B1060069BE0A /* PaperSwitch */ = {

@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Crashlytics.startWithAPIKey("28c8692e863cd8d9f1f9575ab4245e49da550d33")
         
         SupportKit.initWithSettings(SKTSettings(appToken: "ap4bo8nsogtgswrceau24y3ti"))
+        SupportKit.setDefaultRecommendations(["http://www.simpleink.org/acknowledgements"])
         
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
@@ -35,8 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         Logic.instance.resetBackgroundRefreshCount()
     }
 
@@ -51,12 +50,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // MARK: - Background Refresh
 
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         Logic.instance.addBackgroundRefreshCount()
-//        UIApplication.sharedApplication().applicationIconBadgeNumber = Logic.instance.getBackgroundRefreshCount()
         Notifications.instance.setupNotifications()
         completionHandler(UIBackgroundFetchResult.NoData)
+    }
+    
+    // MARK: - Notifications
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        NSNotificationCenter.defaultCenter().postNotificationName("ENTERED_FOREGROUND", object: nil);
     }
 
 }

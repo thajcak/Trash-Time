@@ -32,9 +32,9 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
     func colorForSetupType() -> UIColor {
         switch self.currentSetup! {
         case .Trash:
-            return Theme.ImageColor.Blue.color()
+            return Theme.Color.Blue.color()
         case .Recycling:
-            return Theme.ImageColor.Green.color()
+            return Theme.Color.Green.color()
         }
     }
     
@@ -50,13 +50,13 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
         
         switch currentSetup! {
         case .Trash:
-            self.mainIconImage.image = Theme.fillImage(UIImage(named: "Trash")!, color: Theme.ImageColor.Blue)
-            self.mainIconImage.highlightedImage = Theme.fillImage(UIImage(named: "Trash")!, color: Theme.ImageColor.White)
+            self.mainIconImage.image = Theme.fillImage(UIImage(named: "Trash")!, color: Theme.Color.Blue)
+            self.mainIconImage.highlightedImage = Theme.fillImage(UIImage(named: "Trash")!, color: Theme.Color.White)
             self.questionLabel.text = "When is your next trash collection?"
             self.recyclingParitySegmentedControl.hidden = true
         case .Recycling:
-            self.mainIconImage.image = Theme.fillImage(UIImage(named: "Recycle")!, color: Theme.ImageColor.Green)
-            self.mainIconImage.highlightedImage = Theme.fillImage(UIImage(named: "Recycle")!, color: Theme.ImageColor.White)
+            self.mainIconImage.image = Theme.fillImage(UIImage(named: "Recycle")!, color: Theme.Color.Green)
+            self.mainIconImage.highlightedImage = Theme.fillImage(UIImage(named: "Recycle")!, color: Theme.Color.White)
             self.questionLabel.text = "When is your next recycling collection?"
             self.recyclingParitySegmentedControl.hidden = false
             self.recyclingParitySegmentedControl.alpha = 0
@@ -79,7 +79,7 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
                 case .None: break
                 }
             } else {
-                self.view.backgroundColor = UIColor.whiteColor()
+                self.view.backgroundColor = Theme.Color.White.color()
                 self.nextButton.enabled = true
             }
             
@@ -89,7 +89,7 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
                 animations: {
                     self.mainIconImage.highlighted = onAnimation
                     UIApplication.sharedApplication().setStatusBarStyle((onAnimation ? UIStatusBarStyle.LightContent : UIStatusBarStyle.Default), animated: true)
-                    self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? UIColor.whiteColor() : self.colorForSetupType())
+                    self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? Theme.Color.White.color() : self.colorForSetupType())
                     self.nextButton.title = ""
                 },
                 completion: {(finished: Bool) in
@@ -100,14 +100,14 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
                         options: .CurveEaseInOut,
                         animations: {
                             self.nextButton.title = (onAnimation ? "Continue" : "Skip")
-                            self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? UIColor.whiteColor() : self.colorForSetupType())
+                            self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? Theme.Color.White.color() : self.colorForSetupType())
                             self.calendarVerticalSpaceConstraint.constant = (onAnimation ? -self.calendarView.frame.height : 0)
                             self.questionLabel.alpha = (onAnimation ? 1 : 0)
                             self.recyclingParitySegmentedControl.alpha = (onAnimation ? 1 : 0)
                             self.view.layoutIfNeeded()
                         },
                         completion: {(finished: Bool) in
-                            self.view.backgroundColor = (self.toggleSwitch.on ? self.colorForSetupType() : UIColor.whiteColor())
+                            self.view.backgroundColor = (self.toggleSwitch.on ? self.colorForSetupType() : Theme.Color.White.color())
                             self.toggleSwitch.layoutSubviews()
                         }
                     )
@@ -115,7 +115,7 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
             )
         }
         
-        self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? UIColor.whiteColor() : colorForSetupType())
+        self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? Theme.Color.White.color() : colorForSetupType())
         
         self.calendarView.delegate = self
     }
@@ -126,7 +126,7 @@ class SetupController: UIViewController, RSDFDatePickerViewDelegate {
             self.navigationItem.setHidesBackButton(true, animated: false)
         }
         
-        self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? UIColor.whiteColor() : colorForSetupType())
+        self.navigationController?.navigationBar.tintColor = (self.toggleSwitch.on ? Theme.Color.White.color() : colorForSetupType())
         
         UIApplication.sharedApplication().setStatusBarStyle((self.toggleSwitch.on ? UIStatusBarStyle.LightContent : UIStatusBarStyle.Default), animated: true)
     }
