@@ -1100,7 +1100,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Am I helpful?" id="4ah-3D-YUz">
+                            <tableViewSection headerTitle="Am I helpful? [Comin Soon]" id="4ah-3D-YUz">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="602-E6-OM6" style="IBUITableViewCellStyleDefault" id="xyI-JL-wEV">
                                         <autoresizingMask key="autoresizingMask"/>

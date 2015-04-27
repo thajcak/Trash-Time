@@ -66,6 +66,13 @@ class SettingsTableViewController: UITableViewController {
     }
     
     // MARK: - Table View Delegate
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 0: return "Build \(NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String)!)"
+        default: return nil
+        }
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
