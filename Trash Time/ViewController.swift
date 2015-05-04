@@ -191,8 +191,19 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     }
     
     func setCountdownValues() {
-        self.trashNextCollectionLabel.text = logic.daysUntilCollection(Logic.SectionType.Trash)
-        self.recyclingNextCollectionLabel.text = logic.daysUntilCollection(Logic.SectionType.Recycling)
+        let trashCountdown = logic.daysUntilCollection(Logic.SectionType.Trash)
+        self.trashNextCollectionLabel.text = trashCountdown
+        switch trashCountdown {
+        case "1": self.trashDaysLabel.text = "DAY"
+        default: self.trashDaysLabel.text = "DAYS"
+        }
+        
+        let recyclingCountdown = logic.daysUntilCollection(Logic.SectionType.Recycling)
+        self.recyclingNextCollectionLabel.text = recyclingCountdown
+        switch recyclingCountdown {
+        case "1": self.recyclingDaysLabel.text = "DAY"
+        default: self.recyclingDaysLabel.text = "DAYS"
+        }
     }
     
     // MARK: - Animation Helpers
@@ -448,6 +459,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     @IBOutlet weak var trashNextCollectionLabel: UILabel!
     @IBOutlet weak var trashShadowView: UIView!
     @IBOutlet weak var trashCountdownViewLeadingSpace: NSLayoutConstraint!
+    @IBOutlet weak var trashDaysLabel: UILabel!
     
     @IBOutlet weak var trashImageView: UIImageView!
     @IBOutlet weak var trashIconButton: UIButton!
@@ -459,6 +471,7 @@ class ViewController: UIViewController, RSDFDatePickerViewDelegate, UIAlertViewD
     @IBOutlet weak var recyclingNextCollectionLabel: UILabel!
     @IBOutlet weak var recyclingShadowView: UIView!
     @IBOutlet weak var recyclingCountdownViewLeadingSpace: NSLayoutConstraint!
+    @IBOutlet weak var recyclingDaysLabel: UILabel!
     
     @IBOutlet weak var recycleImageView: UIImageView!
     @IBOutlet weak var recyclingIconButton: UIButton!

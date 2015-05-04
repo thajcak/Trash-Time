@@ -209,14 +209,16 @@ public class Logic {
             switch section {
             case .Trash:
                 if let referenceDate = self.defaults.objectForKey(kTrashReferenceDate) as? NSDate {
-                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kTrashReferenceDate), options: nil)
+//                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kTrashReferenceDate), options: nil)
+                    collectionDate = getDateReference(kTrashReferenceDate)
                     while (collectionDate?.earlierDate(NSDate()) == collectionDate) {
                         collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: collectionDate!, options: nil)
                     }
                 }
             case .Recycling:
                 if let referenceDate = self.defaults.objectForKey(kRecyclingReferenceDate) as? NSDate {
-                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kRecyclingReferenceDate), options: nil)
+//                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kRecyclingReferenceDate), options: nil)
+                    collectionDate = getDateReference(kRecyclingReferenceDate)
                     while (collectionDate?.earlierDate(NSDate()) == collectionDate) {
                         collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: (self.recyclingFrequency()+1), toDate: collectionDate!, options: nil)
                     }
@@ -235,7 +237,7 @@ public class Logic {
             } else if (timeInterval.day == 0){
                 return "1"
             } else {
-                return "\(timeInterval.day)"
+                return "\(++timeInterval.day)"
             }
         } else {
             return "?"
@@ -316,17 +318,19 @@ public class Logic {
         else if (recyclingEnabled && currentDay == recycleDay && currentDate?.laterDate(firstRecyclingDate!) == currentDate && (scheduleFrequency == RecyclingFrequency.Weekly.hashValue || (self.defaults.integerForKey(kScheduledFrequency) == RecyclingFrequency.BiWeekly.hashValue && self.getWeekParityFromDate(currentDate!) == self.getWeekParityFromDate(firstRecyclingDate!)))) {
             isRecycling = true
         }
-
+        
         var daysToGo = "?"
-        let timeInterval = NSCalendar.currentCalendar().components(.CalendarUnitDay | .CalendarUnitHour, fromDate: NSDate(), toDate: currentDate!, options: nil)
-        let today = NSCalendar.currentCalendar().components(.CalendarUnitDay, fromDate: NSDate()).day
-        let collection = NSCalendar.currentCalendar().components(.CalendarUnitDay, fromDate: currentDate!).day
-        if (today == collection) {
-            daysToGo = "today"
-        } else if (timeInterval.day == 0){
-            daysToGo = "tomorrow"
-        } else {
-            daysToGo = "in \(timeInterval.day) days"
+        if isTrash {
+            daysToGo = self.daysUntilCollection(.Trash)
+        } else if isRecycling {
+            daysToGo = self.daysUntilCollection(.Recycling)
+        }
+
+        switch daysToGo {
+        case "?": daysToGo = "unknown"
+        case "0": daysToGo = "today"
+        case "1": daysToGo = "tomorrow"
+        default: daysToGo = "in \(daysToGo) days"
         }
         
         return ("Next Collection \(daysToGo)", isTrash, isRecycling)

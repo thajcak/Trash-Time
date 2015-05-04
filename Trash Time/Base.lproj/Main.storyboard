@@ -394,7 +394,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What day is your next collection?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="SuC-Fy-226">
                                                                 <rect key="frame" x="8" y="571" width="584" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h9z-al-pNU">
@@ -647,6 +647,7 @@
                         <outlet property="recyclingContainerView" destination="PX1-wn-929" id="o2x-8O-L7N"/>
                         <outlet property="recyclingCountdownView" destination="cjX-Tq-IjD" id="XPb-Cd-mgP"/>
                         <outlet property="recyclingCountdownViewLeadingSpace" destination="2Il-Qd-WJn" id="9Dw-4o-I5i"/>
+                        <outlet property="recyclingDaysLabel" destination="Ncr-JE-Ncs" id="N1h-xj-7gO"/>
                         <outlet property="recyclingIconButton" destination="o2c-WQ-mMs" id="5RX-NQ-T3s"/>
                         <outlet property="recyclingNextCollectionLabel" destination="nLb-uG-nRf" id="O9D-ot-sBi"/>
                         <outlet property="recyclingSettingsButton" destination="jmL-ua-Ela" id="qZZ-fw-tpU"/>
@@ -661,6 +662,7 @@
                         <outlet property="trashContainerView" destination="UMJ-kT-gJc" id="rDA-Po-a7g"/>
                         <outlet property="trashCountdownView" destination="lep-X4-NSR" id="ukf-Dk-bHZ"/>
                         <outlet property="trashCountdownViewLeadingSpace" destination="Yew-Hr-qI5" id="RJT-yN-VDx"/>
+                        <outlet property="trashDaysLabel" destination="BG0-Vp-xxn" id="gPD-WF-g1R"/>
                         <outlet property="trashIconButton" destination="4Pd-ck-Z4G" id="xJP-ao-G0a"/>
                         <outlet property="trashImageView" destination="mUD-M9-iy3" id="13E-a8-Jyy"/>
                         <outlet property="trashNextCollectionLabel" destination="zQc-7r-E29" id="D4V-bh-oJZ"/>
@@ -688,102 +690,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4v7-67-N6M" kind="relationship" relationship="rootViewController" id="r1b-uj-euc"/>
+                        <segue destination="prN-IN-UKR" kind="relationship" relationship="rootViewController" id="lPR-v9-6eX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z9f-Yv-neO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1450" y="1837"/>
-        </scene>
-        <!--Welcome Controller-->
-        <scene sceneID="TK2-mJ-xlF">
-            <objects>
-                <viewController id="4v7-67-N6M" customClass="WelcomeController" customModule="Trash_Time" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dM1-xV-79d"/>
-                        <viewControllerLayoutGuide type="bottom" id="0fZ-Cl-s16"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nIF-gS-iLy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjK-tC-bVi">
-                                <rect key="frame" x="0.0" y="255" width="600" height="90"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-rx-RV7">
-                                        <rect key="frame" x="8" y="0.0" width="584" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="Ov1-4f-DEY"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="d5B-ga-TpH"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <color key="textColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="d5B-ga-TpH"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="let's get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwb-Mk-eAP">
-                                        <rect key="frame" x="8" y="60" width="584" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="Tne-gt-h4w"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="kHq-Fr-i2d"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="kHq-Fr-i2d"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="wwb-Mk-eAP" firstAttribute="leading" secondItem="vjK-tC-bVi" secondAttribute="leading" constant="8" id="4X4-Ew-YT5"/>
-                                    <constraint firstAttribute="trailing" secondItem="eSX-rx-RV7" secondAttribute="trailing" constant="8" id="6Zd-ob-zjh"/>
-                                    <constraint firstItem="wwb-Mk-eAP" firstAttribute="top" secondItem="eSX-rx-RV7" secondAttribute="bottom" id="OTG-22-OJf"/>
-                                    <constraint firstItem="eSX-rx-RV7" firstAttribute="top" secondItem="vjK-tC-bVi" secondAttribute="top" id="ho5-jB-0AX"/>
-                                    <constraint firstAttribute="height" constant="90" id="otb-Uk-a9E"/>
-                                    <constraint firstAttribute="trailing" secondItem="wwb-Mk-eAP" secondAttribute="trailing" constant="8" id="qqh-rT-6OR"/>
-                                    <constraint firstItem="eSX-rx-RV7" firstAttribute="leading" secondItem="vjK-tC-bVi" secondAttribute="leading" constant="8" id="tR8-Si-AV0"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="vjK-tC-bVi" secondAttribute="centerY" id="2Z7-nk-ZeM"/>
-                            <constraint firstAttribute="trailing" secondItem="vjK-tC-bVi" secondAttribute="trailing" id="6BC-ys-WjZ"/>
-                            <constraint firstItem="vjK-tC-bVi" firstAttribute="leading" secondItem="nIF-gS-iLy" secondAttribute="leading" id="JPP-45-LDO"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="wnA-Xt-aSX" appends="YES" id="wuV-Nt-YaD"/>
-                            <outletCollection property="gestureRecognizers" destination="cEL-by-x9y" appends="YES" id="2ko-dr-GrM"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" id="s0V-B2-pRf"/>
-                    <connections>
-                        <outlet property="tapGestureRecognizer" destination="wnA-Xt-aSX" id="aFV-af-1Ey"/>
-                        <segue destination="prN-IN-UKR" kind="show" identifier="showTrashView" id="W4e-JU-OJm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XTE-TF-JUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="wnA-Xt-aSX">
-                    <connections>
-                        <action selector="showNextPage:" destination="4v7-67-N6M" id="H6F-4B-A2i"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="cEL-by-x9y">
-                    <connections>
-                        <action selector="showNextPage:" destination="4v7-67-N6M" id="plR-PX-shY"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="2264" y="1837"/>
         </scene>
         <!--Setup Controller-->
         <scene sceneID="Bw0-2C-8wU">
@@ -850,15 +762,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOM-Lp-mo9">
-                                <rect key="frame" x="16" y="72" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="prN-IN-UKR" kind="show" identifier="showSetupController" id="bDY-St-fdM"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MrE-az-6ff">
                                 <rect key="frame" x="8" y="535" width="584" height="29"/>
                                 <segments>
@@ -871,40 +774,126 @@
                                     <action selector="recyclingParityChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5kk-2e-5ob"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEA-Bi-h7q" userLabel="Overlay View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lO-mQ-ai1">
+                                <rect key="frame" x="200" y="447" width="201" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="XkS-WG-vcc"/>
+                                    <constraint firstAttribute="height" constant="30" id="elR-UI-Vmw"/>
+                                </constraints>
+                                <state key="normal" title="Enable Notifications">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="askForNotifications:" destination="prN-IN-UKR" eventType="touchUpInside" id="sED-LA-ZTf"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4vM-0e-jB7">
+                                <rect key="frame" x="16" y="564" width="568" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="efV-5H-qCj"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Collection Day"/>
+                                    <segment title="Day Before"/>
+                                </segments>
+                                <color key="tintColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="notificationTimingChanged:" destination="prN-IN-UKR" eventType="valueChanged" id="fdy-sI-qcD"/>
+                                </connections>
+                            </segmentedControl>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bSt-AZ-6Pz">
+                                <rect key="frame" x="0.0" y="600" width="600" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="G36-FR-cVv"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="447376939.08731002">
+                                    <!--2015-03-06 23:22:19 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="notificationTimeChanged:" destination="prN-IN-UKR" eventType="valueChanged" id="gLA-Ef-EkO"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="vdT-cp-GlC" customClass="TOMSMorphingLabel">
+                                <rect key="frame" x="24" y="260" width="552" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="CbC-nE-K6v"/>
+                                    <constraint firstAttribute="height" constant="80" id="fHR-hX-MEN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                                <color key="textColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="morphingEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterShrinkFactor">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterAnimationOffset">
+                                        <real key="value" value="0.40000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CbC-nE-K6v"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bSt-AZ-6Pz" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" id="13C-OK-Mgq"/>
+                            <constraint firstItem="amK-O1-2h2" firstAttribute="top" secondItem="bSt-AZ-6Pz" secondAttribute="bottom" id="2sH-jA-Ovm"/>
+                            <constraint firstItem="bSt-AZ-6Pz" firstAttribute="top" secondItem="4vM-0e-jB7" secondAttribute="bottom" constant="8" id="4Ef-SH-AaH"/>
                             <constraint firstAttribute="bottom" secondItem="Voe-Jc-oxQ" secondAttribute="bottom" constant="-250" id="4XL-Tt-JXw"/>
+                            <constraint firstAttribute="centerY" secondItem="4lO-mQ-ai1" secondAttribute="centerY" multiplier="0.65" id="4cf-rz-UHw"/>
                             <constraint firstItem="Cn4-1t-q99" firstAttribute="top" secondItem="7Pr-0F-WvM" secondAttribute="top" constant="262" id="5dX-Eu-YNS"/>
+                            <constraint firstItem="vdT-cp-GlC" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" constant="24" id="5ol-9N-ar0"/>
                             <constraint firstAttribute="centerX" secondItem="7Pr-0F-WvM" secondAttribute="centerX" id="6Qk-K6-JGF"/>
                             <constraint firstAttribute="trailing" secondItem="Voe-Jc-oxQ" secondAttribute="trailing" id="Bf3-q7-iPC"/>
                             <constraint firstItem="Cn4-1t-q99" firstAttribute="top" secondItem="7Pr-0F-WvM" secondAttribute="top" constant="262" id="Cda-xw-QUl"/>
+                            <constraint firstItem="amK-O1-2h2" firstAttribute="top" secondItem="HEA-Bi-h7q" secondAttribute="bottom" id="Cm0-8N-F7s"/>
                             <constraint firstItem="Voe-Jc-oxQ" firstAttribute="top" secondItem="MrE-az-6ff" secondAttribute="bottom" constant="8" id="Ea1-dy-4Vu"/>
                             <constraint firstAttribute="trailing" secondItem="VT7-46-NYy" secondAttribute="trailing" constant="16" id="EdJ-kw-LsR"/>
                             <constraint firstAttribute="centerY" secondItem="7Pr-0F-WvM" secondAttribute="centerY" id="G16-LY-e3G"/>
+                            <constraint firstItem="HEA-Bi-h7q" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" id="KzP-TW-jgy"/>
                             <constraint firstAttribute="centerX" secondItem="l1X-FP-dyG" secondAttribute="centerX" constant="-50" id="La0-x0-s6p"/>
                             <constraint firstItem="l1X-FP-dyG" firstAttribute="centerY" secondItem="7Pr-0F-WvM" secondAttribute="centerY" id="Pw0-lf-AGZ"/>
                             <constraint firstItem="Voe-Jc-oxQ" firstAttribute="top" secondItem="amK-O1-2h2" secondAttribute="bottom" id="Q3F-5k-fDN"/>
                             <constraint firstItem="MrE-az-6ff" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" constant="8" id="R4l-fx-U61"/>
                             <constraint firstItem="Cn4-1t-q99" firstAttribute="top" secondItem="7Pr-0F-WvM" secondAttribute="top" constant="262" id="SIu-PM-4PJ"/>
+                            <constraint firstItem="4vM-0e-jB7" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" constant="16" id="SRa-gL-Gt7"/>
                             <constraint firstItem="Cn4-1t-q99" firstAttribute="top" secondItem="2j1-aq-y2o" secondAttribute="bottom" constant="80" id="SwK-fO-QMk"/>
                             <constraint firstAttribute="centerY" secondItem="l1X-FP-dyG" secondAttribute="centerY" id="U2j-kW-4KR"/>
                             <constraint firstAttribute="trailing" secondItem="MrE-az-6ff" secondAttribute="trailing" constant="8" id="UeG-RU-JpD"/>
+                            <constraint firstAttribute="trailing" secondItem="vdT-cp-GlC" secondAttribute="trailing" constant="24" id="VSn-8A-amu"/>
                             <constraint firstItem="Voe-Jc-oxQ" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" id="VhF-M1-RPV"/>
                             <constraint firstItem="Cn4-1t-q99" firstAttribute="centerY" secondItem="7Pr-0F-WvM" secondAttribute="centerY" id="Y94-Oc-9JL"/>
                             <constraint firstItem="amK-O1-2h2" firstAttribute="top" secondItem="VT7-46-NYy" secondAttribute="bottom" constant="8" id="Ykk-jc-ooz"/>
                             <constraint firstItem="a7F-Tm-0B6" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" id="YoY-4O-j2n"/>
+                            <constraint firstAttribute="centerX" secondItem="4lO-mQ-ai1" secondAttribute="centerX" id="ZMn-Im-f4c"/>
+                            <constraint firstAttribute="trailing" secondItem="4vM-0e-jB7" secondAttribute="trailing" constant="16" id="agq-Yk-d6Q"/>
+                            <constraint firstAttribute="trailing" secondItem="HEA-Bi-h7q" secondAttribute="trailing" id="ar4-0Y-8zQ"/>
                             <constraint firstAttribute="centerY" secondItem="7Pr-0F-WvM" secondAttribute="centerY" id="cOK-2i-BKV"/>
                             <constraint firstAttribute="trailing" secondItem="a7F-Tm-0B6" secondAttribute="trailing" id="dSL-oc-diB"/>
                             <constraint firstItem="7Pr-0F-WvM" firstAttribute="top" secondItem="N5K-zv-yfD" secondAttribute="topMargin" id="eW6-Jn-JUw"/>
                             <constraint firstItem="Voe-Jc-oxQ" firstAttribute="top" secondItem="VT7-46-NYy" secondAttribute="bottom" constant="8" id="fZC-Cg-KnX"/>
                             <constraint firstItem="VT7-46-NYy" firstAttribute="top" secondItem="MrE-az-6ff" secondAttribute="bottom" constant="8" id="hAH-nI-EbM"/>
+                            <constraint firstAttribute="centerY" secondItem="vdT-cp-GlC" secondAttribute="centerY" id="huY-0K-Omc"/>
+                            <constraint firstItem="HEA-Bi-h7q" firstAttribute="top" secondItem="N5K-zv-yfD" secondAttribute="top" id="iUh-Wr-iYf"/>
                             <constraint firstItem="a7F-Tm-0B6" firstAttribute="top" secondItem="Voe-Jc-oxQ" secondAttribute="bottom" id="im7-GA-2Xn"/>
                             <constraint firstItem="Cn4-1t-q99" firstAttribute="top" secondItem="2j1-aq-y2o" secondAttribute="bottom" constant="242" id="kxF-X6-aD7"/>
                             <constraint firstItem="l1X-FP-dyG" firstAttribute="top" secondItem="2j1-aq-y2o" secondAttribute="bottom" constant="102" id="m41-Tg-B5p"/>
                             <constraint firstItem="Cn4-1t-q99" firstAttribute="bottom" secondItem="7Pr-0F-WvM" secondAttribute="bottom" constant="117" id="oPp-VE-pa2"/>
+                            <constraint firstAttribute="trailing" secondItem="bSt-AZ-6Pz" secondAttribute="trailing" id="pNM-2d-sdv"/>
                             <constraint firstAttribute="centerY" secondItem="l1X-FP-dyG" secondAttribute="centerY" id="qaZ-yv-jNa"/>
                             <constraint firstAttribute="centerX" secondItem="Cn4-1t-q99" secondAttribute="centerX" constant="37" id="rfr-jT-bU0"/>
+                            <constraint firstItem="bSt-AZ-6Pz" firstAttribute="top" secondItem="amK-O1-2h2" secondAttribute="bottom" id="vem-Rk-6Bk"/>
                             <constraint firstItem="Voe-Jc-oxQ" firstAttribute="height" secondItem="N5K-zv-yfD" secondAttribute="height" multiplier="0.5" id="vvS-rU-CAN"/>
                             <constraint firstItem="VT7-46-NYy" firstAttribute="leading" secondItem="N5K-zv-yfD" secondAttribute="leading" constant="16" id="y8f-5F-MsO"/>
                             <constraint firstItem="Voe-Jc-oxQ" firstAttribute="top" secondItem="7Pr-0F-WvM" secondAttribute="bottom" id="ywl-tu-gcv"/>
@@ -924,11 +913,17 @@
                                 <exclude reference="qaZ-yv-jNa"/>
                                 <exclude reference="4XL-Tt-JXw"/>
                                 <exclude reference="Ea1-dy-4Vu"/>
+                                <exclude reference="2sH-jA-Ovm"/>
                                 <exclude reference="Ykk-jc-ooz"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="BMH-AD-pDC">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="7qI-8C-og2">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="prN-IN-UKR" id="RIc-4z-7bu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Skip" id="Hnt-b5-nJy">
                             <connections>
                                 <action selector="nextButtonTapped:" destination="prN-IN-UKR" id="tWy-6n-Bfk"/>
@@ -936,19 +931,25 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="7qI-8C-og2" id="vhM-iM-IcQ"/>
                         <outlet property="calendarVerticalSpaceConstraint" destination="Q3F-5k-fDN" id="o9w-Pl-Wz3"/>
                         <outlet property="calendarView" destination="Voe-Jc-oxQ" id="hoU-a0-mI5"/>
                         <outlet property="mainIconImage" destination="Cn4-1t-q99" id="hQa-bs-7B2"/>
                         <outlet property="nextButton" destination="Hnt-b5-nJy" id="YKT-1N-DHb"/>
+                        <outlet property="notificationTimePicker" destination="bSt-AZ-6Pz" id="HHE-JK-m8e"/>
+                        <outlet property="notificationTimingSegmentedControl" destination="4vM-0e-jB7" id="EUt-vp-sLj"/>
+                        <outlet property="notificationsButton" destination="4lO-mQ-ai1" id="lvl-0z-Vn1"/>
+                        <outlet property="overlayView" destination="HEA-Bi-h7q" id="evF-dT-fzv"/>
                         <outlet property="questionLabel" destination="VT7-46-NYy" id="Pld-mj-oTf"/>
                         <outlet property="recyclingParitySegmentedControl" destination="MrE-az-6ff" id="jur-TM-TP6"/>
+                        <outlet property="timePickerVerticalSpaceConstraint" destination="vem-Rk-6Bk" id="OHI-Ni-49a"/>
                         <outlet property="toggleSwitch" destination="l1X-FP-dyG" id="OoX-ev-u6v"/>
-                        <segue destination="Wdp-o8-Bh3" kind="show" identifier="showTiming" id="WOE-YR-pbh"/>
+                        <outlet property="welcomeLabel" destination="vdT-cp-GlC" id="lXY-Dx-HZO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFX-mi-ETm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="1837"/>
+            <point key="canvasLocation" x="2186" y="1837"/>
         </scene>
         <!--Trash Time-->
         <scene sceneID="Xa3-Sq-UF1">
@@ -986,7 +987,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Background Refreshes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EOZ-C9-g7b">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24H-lY-e3O">
@@ -1228,200 +1229,6 @@
             </objects>
             <point key="canvasLocation" x="3775" y="963"/>
         </scene>
-        <!--Timing Setup Controller-->
-        <scene sceneID="D4n-7d-tNd">
-            <objects>
-                <viewController id="Wdp-o8-Bh3" customClass="TimingSetupController" customModule="Trash_Time" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bdC-Oo-rAP"/>
-                        <viewControllerLayoutGuide type="bottom" id="SHJ-HB-Elg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HgI-7k-Dhq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hIL-1K-dlt">
-                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="V7q-Jw-Z9v"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="447376939.08731002">
-                                    <!--2015-03-06 23:22:19 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="notificationTimeChanged:" destination="Wdp-o8-Bh3" eventType="valueChanged" id="hxs-It-xMD"/>
-                                </connections>
-                            </datePicker>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="va1-1R-ehi">
-                                <rect key="frame" x="0.0" y="169" width="600" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When do you want a reminder?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Xam-wP-fMI">
-                                        <rect key="frame" x="16" y="8" width="568" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="HvJ-P9-b6D"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ley-8P-63m">
-                                        <rect key="frame" x="16" y="64" width="568" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="jIL-ql-J2u"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Collection Day"/>
-                                            <segment title="Day Before"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="notificationTimingChanged:" destination="Wdp-o8-Bh3" eventType="valueChanged" id="XZI-39-PEX"/>
-                                        </connections>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Xam-wP-fMI" secondAttribute="trailing" constant="16" id="3Iv-RP-OMU"/>
-                                    <constraint firstItem="Ley-8P-63m" firstAttribute="leading" secondItem="va1-1R-ehi" secondAttribute="leading" constant="16" id="4ke-cd-y2n"/>
-                                    <constraint firstItem="Xam-wP-fMI" firstAttribute="top" secondItem="va1-1R-ehi" secondAttribute="top" constant="8" id="PeH-gE-Lxz"/>
-                                    <constraint firstAttribute="height" constant="100" id="V6z-me-5xK"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ley-8P-63m" secondAttribute="bottom" constant="8" id="Ytw-ye-17L"/>
-                                    <constraint firstItem="Ley-8P-63m" firstAttribute="top" secondItem="Xam-wP-fMI" secondAttribute="bottom" constant="9" id="bK8-CM-h00"/>
-                                    <constraint firstItem="Xam-wP-fMI" firstAttribute="leading" secondItem="va1-1R-ehi" secondAttribute="leading" constant="16" id="jR4-Nm-dSJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ley-8P-63m" secondAttribute="trailing" constant="16" id="wzz-GX-s5O"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="bK8-CM-h00"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJw-nn-VAm" userLabel="Spacer View">
-                                <rect key="frame" x="295" y="0.0" width="10" height="438"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="KWh-yG-Sjd"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hIL-1K-dlt" firstAttribute="leading" secondItem="HgI-7k-Dhq" secondAttribute="leading" id="5JC-HR-E19"/>
-                            <constraint firstItem="bJw-nn-VAm" firstAttribute="top" secondItem="HgI-7k-Dhq" secondAttribute="top" id="Ixn-t2-cTv"/>
-                            <constraint firstItem="hIL-1K-dlt" firstAttribute="top" secondItem="bJw-nn-VAm" secondAttribute="bottom" id="JSI-eF-A88"/>
-                            <constraint firstItem="va1-1R-ehi" firstAttribute="leading" secondItem="HgI-7k-Dhq" secondAttribute="leading" id="YkZ-5Y-RCk"/>
-                            <constraint firstItem="va1-1R-ehi" firstAttribute="centerY" secondItem="bJw-nn-VAm" secondAttribute="centerY" id="cPr-L8-Ych"/>
-                            <constraint firstAttribute="trailing" secondItem="hIL-1K-dlt" secondAttribute="trailing" id="ehZ-tl-mKC"/>
-                            <constraint firstAttribute="trailing" secondItem="va1-1R-ehi" secondAttribute="trailing" id="f4x-24-2MT"/>
-                            <constraint firstAttribute="centerX" secondItem="bJw-nn-VAm" secondAttribute="centerX" id="hv1-a9-a6U"/>
-                            <constraint firstItem="SHJ-HB-Elg" firstAttribute="top" secondItem="hIL-1K-dlt" secondAttribute="bottom" id="rLd-dd-wwb"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="CAf-zw-FIZ">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="7Xm-JR-XkI">
-                            <connections>
-                                <action selector="nextAction:" destination="Wdp-o8-Bh3" id="rcl-F7-OP2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="nextButton" destination="7Xm-JR-XkI" id="21s-r3-bVN"/>
-                        <outlet property="notificationTimePicker" destination="hIL-1K-dlt" id="MzS-Sv-LgS"/>
-                        <outlet property="notificationTimingSegmentedControl" destination="Ley-8P-63m" id="bPJ-F1-TI9"/>
-                        <segue destination="8d5-4d-KbF" kind="show" identifier="Request Notifications" id="Mza-Du-hAW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZmH-2g-gI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3775" y="1837"/>
-        </scene>
-        <!--Enable Notifications Controller-->
-        <scene sceneID="Bny-Jt-lLK">
-            <objects>
-                <viewController id="8d5-4d-KbF" customClass="EnableNotificationsController" customModule="Trash_Time" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aCb-Ug-bpA"/>
-                        <viewControllerLayoutGuide type="bottom" id="xd1-kV-cmD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g5C-DV-CcJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdq-yj-8w1">
-                                <rect key="frame" x="16" y="72" width="568" height="428"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Notifications">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Medium"/>
-                                            <font key="NSOriginalFont" size="24" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <font key="NSFont" size="24" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-I need permission to send you notifications when it's time to take out your trash and recycling.
-
-You can change this later by opening the iOS Settings app and finding Trash Time towards the bottom of the screen.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Et3-Ji-l1q">
-                                <rect key="frame" x="200" y="535" width="201" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="mVN-ET-XCf"/>
-                                    <constraint firstAttribute="height" constant="30" id="rbj-aQ-mZk"/>
-                                </constraints>
-                                <state key="normal" title="Enable Notifications">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="askForNotifications:" destination="8d5-4d-KbF" eventType="touchUpInside" id="clq-1v-BVy"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Et3-Ji-l1q" secondAttribute="centerX" id="5iF-Zr-Ng3"/>
-                            <constraint firstAttribute="centerY" secondItem="Et3-Ji-l1q" secondAttribute="centerY" id="9OC-vn-jTu"/>
-                            <constraint firstItem="xd1-kV-cmD" firstAttribute="top" secondItem="Et3-Ji-l1q" secondAttribute="bottom" constant="35" id="N6Z-Uo-WmT"/>
-                            <constraint firstItem="bdq-yj-8w1" firstAttribute="leading" secondItem="g5C-DV-CcJ" secondAttribute="leading" constant="16" id="Tet-0r-c1Q"/>
-                            <constraint firstItem="bdq-yj-8w1" firstAttribute="top" secondItem="aCb-Ug-bpA" secondAttribute="bottom" constant="8" id="WhK-xO-jt3"/>
-                            <constraint firstAttribute="trailing" secondItem="bdq-yj-8w1" secondAttribute="trailing" constant="16" id="et5-Io-lVu"/>
-                            <constraint firstItem="Et3-Ji-l1q" firstAttribute="top" secondItem="bdq-yj-8w1" secondAttribute="bottom" constant="35" id="jt7-LQ-Rzb"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="9OC-vn-jTu"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="0CS-bT-uQ0">
-                        <barButtonItem key="rightBarButtonItem" title="Finish" id="sb1-G4-JvC">
-                            <connections>
-                                <action selector="finishSetup:" destination="8d5-4d-KbF" id="uw9-uV-VMf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="finishButton" destination="sb1-G4-JvC" id="JIj-xv-G6D"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gLL-ER-kbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4528" y="1837"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="C6X-Jc-IBK">
             <objects>
@@ -1447,7 +1254,4 @@ You can change this later by opening the iOS Settings app and finding Trash Time
         <image name="Calendar" width="100" height="100"/>
         <image name="Info Toolbar" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="W4e-JU-OJm"/>
-    </inferredMetricsTieBreakers>
 </document>

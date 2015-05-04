@@ -8,5 +8,6 @@
 
 #import "RSDayFlow.h"
 #import "AMPopTip.h"
+#import "TOMSMorphingLabel.h"
 
 #import <SupportKit/SupportKit.h>

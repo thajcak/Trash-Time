@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Crashlytics.startWithAPIKey("28c8692e863cd8d9f1f9575ab4245e49da550d33")
+        #if !TARGET_IPHONE_SIMULATOR
+            Crashlytics.startWithAPIKey("28c8692e863cd8d9f1f9575ab4245e49da550d33")
+        #endif
         
         SupportKit.initWithSettings(SKTSettings(appToken: "ap4bo8nsogtgswrceau24y3ti"))
         SupportKit.setDefaultRecommendations(["http://www.simpleink.org/acknowledgements"])

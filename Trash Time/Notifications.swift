@@ -87,6 +87,9 @@ class Notifications : NSObject {
             currentDate = (trashEnabled ? firstTrashDate! : firstRecyclingDate!)
         }
         
+        let alertTime = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: self.logic.alertDate())
+        currentDate = NSCalendar.currentCalendar().dateBySettingHour(alertTime.hour, minute: alertTime.minute, second: 0, ofDate: currentDate!, options: nil)
+        
         while (currentDate?.earlierDate(NSDate()) == currentDate) {
             currentDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: currentDate!, options: nil)
         }
