@@ -133,7 +133,7 @@ public class Logic {
         let reminderDateComponents = self.defaults.objectForKey(kScheduledAlertTime) as? NSData
         let savedReminderTime = NSKeyedUnarchiver.unarchiveObjectWithData(reminderDateComponents!) as! NSDateComponents
         
-        var collectionDate = getDateReference(kTrashReferenceDate)
+        var collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kTrashReferenceDate), options: nil)!
         while (collectionDate.earlierDate(NSDate()) == collectionDate) {
             collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: collectionDate, options: nil)!
         }
@@ -148,7 +148,7 @@ public class Logic {
         let reminderDateComponents = self.defaults.objectForKey(kScheduledAlertTime) as? NSData
         let savedReminderTime = NSKeyedUnarchiver.unarchiveObjectWithData(reminderDateComponents!) as! NSDateComponents
         
-        var collectionDate = getDateReference(kRecyclingReferenceDate)
+        var collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kRecyclingReferenceDate), options: nil)!
         while (collectionDate.earlierDate(NSDate()) == collectionDate) {
             collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: (self.recyclingFrequency()+1), toDate: collectionDate, options: nil)!
         }
@@ -204,21 +204,21 @@ public class Logic {
         var collectionDate: NSDate?
         
         if let reminderDateComponents = self.defaults.objectForKey(kScheduledAlertTime) as? NSData {
-            let savedReminderTime = NSKeyedUnarchiver.unarchiveObjectWithData(reminderDateComponents) as! NSDateComponents
+//            let savedReminderTime = NSKeyedUnarchiver.unarchiveObjectWithData(reminderDateComponents) as! NSDateComponents
             
             switch section {
             case .Trash:
                 if let referenceDate = self.defaults.objectForKey(kTrashReferenceDate) as? NSDate {
-//                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kTrashReferenceDate), options: nil)
-                    collectionDate = getDateReference(kTrashReferenceDate)
+                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(23, minute: 59, second: 59, ofDate: getDateReference(kTrashReferenceDate), options: nil)
+//                    collectionDate = getDateReference(kTrashReferenceDate)
                     while (collectionDate?.earlierDate(NSDate()) == collectionDate) {
                         collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: collectionDate!, options: nil)
                     }
                 }
             case .Recycling:
                 if let referenceDate = self.defaults.objectForKey(kRecyclingReferenceDate) as? NSDate {
-//                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(savedReminderTime.hour, minute: savedReminderTime.minute, second: 0, ofDate: getDateReference(kRecyclingReferenceDate), options: nil)
-                    collectionDate = getDateReference(kRecyclingReferenceDate)
+                    collectionDate = NSCalendar.currentCalendar().dateBySettingHour(23, minute: 59, second: 59, ofDate: getDateReference(kRecyclingReferenceDate), options: nil)
+//                    collectionDate = getDateReference(kRecyclingReferenceDate)
                     while (collectionDate?.earlierDate(NSDate()) == collectionDate) {
                         collectionDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: (self.recyclingFrequency()+1), toDate: collectionDate!, options: nil)
                     }
@@ -237,7 +237,7 @@ public class Logic {
             } else if (timeInterval.day == 0){
                 return "1"
             } else {
-                return "\(++timeInterval.day)"
+                return "\(timeInterval.day)"
             }
         } else {
             return "?"

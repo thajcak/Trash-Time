@@ -949,7 +949,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFX-mi-ETm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="1837"/>
+            <point key="canvasLocation" x="2264" y="1837"/>
         </scene>
         <!--Trash Time-->
         <scene sceneID="Xa3-Sq-UF1">

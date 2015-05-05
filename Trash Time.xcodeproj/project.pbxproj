@@ -267,10 +267,10 @@
 		D54A90471AD5FA3B00528425 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D562935A1AE1EBAE00FA1B3D /* Trash Time.entitlements */,
 				D54A904D1AD5FA3B00528425 /* Main.storyboard */,
 				D54A90521AD5FA3B00528425 /* LaunchScreen.xib */,
 				D54A90501AD5FA3B00528425 /* Images.xcassets */,
+				D562935A1AE1EBAE00FA1B3D /* Trash Time.entitlements */,
 				D54A90481AD5FA3B00528425 /* Info.plist */,
 				D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */,
 			);

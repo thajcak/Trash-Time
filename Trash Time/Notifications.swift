@@ -140,6 +140,10 @@ class Notifications : NSObject {
             case .None: break
             }
             
+            if localNotification.fireDate?.earlierDate(NSDate()) == localNotification {
+                return
+            }
+            
             
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
             if UIApplication.sharedApplication().scheduledLocalNotifications.count >= 60 {
