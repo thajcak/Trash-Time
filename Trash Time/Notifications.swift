@@ -90,7 +90,7 @@ class Notifications : NSObject {
         let alertTime = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: self.logic.alertDate())
         currentDate = NSCalendar.currentCalendar().dateBySettingHour(alertTime.hour, minute: alertTime.minute, second: 0, ofDate: currentDate!, options: nil)
         
-        while (currentDate?.earlierDate(NSDate()) == currentDate) {
+        while (currentDate!.earlierDate(NSDate()) == currentDate) {
             currentDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: currentDate!, options: nil)
         }
         
@@ -140,7 +140,7 @@ class Notifications : NSObject {
             case .None: break
             }
             
-            if localNotification.fireDate?.earlierDate(NSDate()) == localNotification {
+            if localNotification.fireDate?.earlierDate(NSDate()) == localNotification.fireDate {
                 return
             }
             

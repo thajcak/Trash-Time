@@ -345,7 +345,9 @@ class SetupController: UIViewController, UIPickerViewDelegate, RSDFDatePickerVie
     // MARK: - Navigation Control
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
-        self.currentSetup = SetupType(rawValue: self.currentSetup.rawValue + 1)!
+        if let nextStep = SetupType(rawValue: self.currentSetup.rawValue + 1) {
+            self.currentSetup = nextStep
+        }
         self.showIntroMessage()
         self.setupMessage(false)
         
