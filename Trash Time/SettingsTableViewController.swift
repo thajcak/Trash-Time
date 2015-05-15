@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import StoreKit
 import TrashTimeShare
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, UITableViewDelegate, SKStoreProductViewControllerDelegate {
     
     @IBOutlet weak var backgroundRefreshCount: UILabel!
     
@@ -22,7 +23,6 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setToolbarHidden(true, animated: false)
-        self.backgroundRefreshCount.text = "\(Logic.instance.getBackgroundRefreshCount())"
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,11 +41,18 @@ class SettingsTableViewController: UITableViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func showHelp(sender: AnyObject) {
+    func showHelp() {
         SupportKit.show()
     }
     
-    @IBAction func resetSettings(sender: AnyObject) {
+    func showStoreView() {
+        let storeViewController = SKStoreProductViewController()
+        storeViewController.loadProductWithParameters([SKStoreProductParameterITunesItemIdentifier : "986001359"], completionBlock: nil)
+        storeViewController.delegate = self
+        self.presentViewController(storeViewController, animated: true, completion: nil);
+    }
+
+    func resetSettings() {
         Logic.instance.forgetEverything()
         
         closeSettings(self)
@@ -65,15 +72,30 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table View Delegate
-    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        switch section {
-        case 0: return "Build \(NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String)!)"
-        default: return nil
-        }
+    // MARK: - StoreKit Delegate
+    func productViewControllerDidFinish(viewController: SKStoreProductViewController!) {
+        viewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - Table View Delegate
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            showHelp()
+        case 1:
+            showStoreView()
+        case 2:
+            resetSettings()
+        default: break
+        }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 2: return "Trash Time v1 (\(NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String)!))"
+        default: return nil
+        }
     }
 }

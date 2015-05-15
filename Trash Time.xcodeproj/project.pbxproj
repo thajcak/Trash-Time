@@ -12,8 +12,6 @@
 		D54A904F1AD5FA3B00528425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54A904D1AD5FA3B00528425 /* Main.storyboard */; };
 		D54A90511AD5FA3B00528425 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54A90501AD5FA3B00528425 /* Images.xcassets */; };
 		D54A90541AD5FA3B00528425 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54A90521AD5FA3B00528425 /* LaunchScreen.xib */; };
-		D552ED8E1AF83964006FA908 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3A9F1AEFA65C006FE733 /* Crashlytics.framework */; };
-		D552ED8F1AF83969006FA908 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3AC71AEFA65C006FE733 /* SupportKit.framework */; };
 		D55B58F61AD6AF610069BE0A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */; };
 		D55B58FF1AD6B0080069BE0A /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B58FE1AD6B0080069BE0A /* SetupController.swift */; };
 		D56293011AE167D700FA1B3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56292FE1AE167D700FA1B3D /* CoreGraphics.framework */; };
@@ -38,6 +36,9 @@
 		D56293591AE1E8DF00FA1B3D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562932E1AE1DD5800FA1B3D /* Theme.swift */; };
 		D5B41D791ADD81FD00E56477 /* DebugTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */; };
 		D5E2C69E1AE6D3ED001B532E /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2C69D1AE6D3ED001B532E /* Notifications.swift */; };
+		D5E8292E1B061575008148F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E8292D1B061575008148F0 /* StoreKit.framework */; };
+		D5E8292F1B0615A1008148F0 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3A9F1AEFA65C006FE733 /* Crashlytics.framework */; };
+		D5E829301B0615A6008148F0 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3AC71AEFA65C006FE733 /* SupportKit.framework */; };
 		D5FF3AC81AEFA65C006FE733 /* AMPopTip.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FF3A9E1AEFA65C006FE733 /* AMPopTip.m */; };
 		D5FF3ACA1AEFA65C006FE733 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF3AA11AEFA65C006FE733 /* LTCharacterLimbo.swift */; };
 		D5FF3ACB1AEFA65C006FE733 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF3AA21AEFA65C006FE733 /* LTEasing.swift */; };
@@ -120,7 +121,7 @@
 		D54A90531AD5FA3B00528425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D55B58F71AD6AF9B0069BE0A /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logic.swift; path = "../Trash Time/Logic.swift"; sourceTree = "<group>"; };
-		D55B58FE1AD6B0080069BE0A /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupController.swift; sourceTree = "<group>"; };
+		D55B58FE1AD6B0080069BE0A /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupController.swift; path = Intro/SetupController.swift; sourceTree = "<group>"; };
 		D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		D56292FE1AE167D700FA1B3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D56292FF1AE167D700FA1B3D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -144,6 +145,7 @@
 		D562935B1AE1ECA400FA1B3D /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
 		D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableViewController.swift; sourceTree = "<group>"; };
 		D5E2C69D1AE6D3ED001B532E /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		D5E8292D1B061575008148F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D5FF3A9D1AEFA65C006FE733 /* AMPopTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopTip.h; sourceTree = "<group>"; };
 		D5FF3A9E1AEFA65C006FE733 /* AMPopTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPopTip.m; sourceTree = "<group>"; };
 		D5FF3A9F1AEFA65C006FE733 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -193,8 +195,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5E8292E1B061575008148F0 /* StoreKit.framework in Frameworks */,
 				D56293011AE167D700FA1B3D /* CoreGraphics.framework in Frameworks */,
+				D5E8292F1B0615A1008148F0 /* Crashlytics.framework in Frameworks */,
 				D56293021AE167D700FA1B3D /* CoreTelephony.framework in Frameworks */,
+				D5E829301B0615A6008148F0 /* SupportKit.framework in Frameworks */,
 				D56293031AE167D700FA1B3D /* CoreText.framework in Frameworks */,
 				D562930A1AE167FA00FA1B3D /* Foundation.framework in Frameworks */,
 				D562930B1AE167FA00FA1B3D /* libxml2.dylib in Frameworks */,
@@ -202,8 +207,6 @@
 				D562930D1AE167FA00FA1B3D /* QuartzCore.framework in Frameworks */,
 				D562930E1AE167FA00FA1B3D /* SystemConfiguration.framework in Frameworks */,
 				D562934E1AE1DF9100FA1B3D /* TrashTimeShare.framework in Frameworks */,
-				D552ED8F1AF83969006FA908 /* SupportKit.framework in Frameworks */,
-				D552ED8E1AF83964006FA908 /* Crashlytics.framework in Frameworks */,
 				D562930F1AE167FA00FA1B3D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +260,7 @@
 				D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */,
 				D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */,
 				D5E2C69D1AE6D3ED001B532E /* Notifications.swift */,
-				D55B58FB1AD6AFD40069BE0A /* Intro */,
+				D55B58FE1AD6B0080069BE0A /* SetupController.swift */,
 				D54A90471AD5FA3B00528425 /* Supporting Files */,
 				D56293101AE1681000FA1B3D /* Frameworks */,
 			);
@@ -275,14 +278,6 @@
 				D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D55B58FB1AD6AFD40069BE0A /* Intro */ = {
-			isa = PBXGroup;
-			children = (
-				D55B58FE1AD6B0080069BE0A /* SetupController.swift */,
-			);
-			path = Intro;
 			sourceTree = "<group>";
 		};
 		D56293101AE1681000FA1B3D /* Frameworks */ = {
@@ -305,6 +300,7 @@
 		D56293191AE19EBF00FA1B3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5E8292D1B061575008148F0 /* StoreKit.framework */,
 				D562931A1AE19EBF00FA1B3D /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -852,6 +848,10 @@
 					Party,
 					"$(PROJECT_DIR)/Third",
 					Party/SupportKit,
+					"$(PROJECT_DIR)/Third",
+					Party,
+					"$(PROJECT_DIR)/Third",
+					Party/SupportKit,
 				);
 				INFOPLIST_FILE = "Trash Time/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -872,6 +872,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Trash\\ Time/Third\\ Party/**",
+					"$(PROJECT_DIR)/Third",
+					Party,
+					"$(PROJECT_DIR)/Third",
+					Party/SupportKit,
 					"$(PROJECT_DIR)/Third",
 					Party,
 					"$(PROJECT_DIR)/Third",
