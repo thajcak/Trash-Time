@@ -37,8 +37,8 @@
 		D5B41D791ADD81FD00E56477 /* DebugTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */; };
 		D5E2C69E1AE6D3ED001B532E /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2C69D1AE6D3ED001B532E /* Notifications.swift */; };
 		D5E8292E1B061575008148F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E8292D1B061575008148F0 /* StoreKit.framework */; };
-		D5E8292F1B0615A1008148F0 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3A9F1AEFA65C006FE733 /* Crashlytics.framework */; };
-		D5E829301B0615A6008148F0 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3AC71AEFA65C006FE733 /* SupportKit.framework */; };
+		D5EE8EFD1B0CB20900CC8696 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3A9F1AEFA65C006FE733 /* Crashlytics.framework */; };
+		D5EE8EFE1B0CB20D00CC8696 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FF3AC71AEFA65C006FE733 /* SupportKit.framework */; };
 		D5FF3AC81AEFA65C006FE733 /* AMPopTip.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FF3A9E1AEFA65C006FE733 /* AMPopTip.m */; };
 		D5FF3ACA1AEFA65C006FE733 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF3AA11AEFA65C006FE733 /* LTCharacterLimbo.swift */; };
 		D5FF3ACB1AEFA65C006FE733 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF3AA21AEFA65C006FE733 /* LTEasing.swift */; };
@@ -120,8 +120,8 @@
 		D54A90501AD5FA3B00528425 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D54A90531AD5FA3B00528425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D55B58F51AD6AF610069BE0A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		D55B58F71AD6AF9B0069BE0A /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logic.swift; path = "../Trash Time/Logic.swift"; sourceTree = "<group>"; };
-		D55B58FE1AD6B0080069BE0A /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupController.swift; path = Intro/SetupController.swift; sourceTree = "<group>"; };
+		D55B58F71AD6AF9B0069BE0A /* Logic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
+		D55B58FE1AD6B0080069BE0A /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupController.swift; sourceTree = "<group>"; };
 		D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		D56292FE1AE167D700FA1B3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D56292FF1AE167D700FA1B3D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -137,7 +137,7 @@
 		D562931E1AE19EBF00FA1B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D562931F1AE19EBF00FA1B3D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		D562932E1AE1DD5800FA1B3D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = "../Trash Time/Theme.swift"; sourceTree = "<group>"; };
+		D562932E1AE1DD5800FA1B3D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D56293371AE1DF9000FA1B3D /* TrashTimeShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TrashTimeShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D562933A1AE1DF9000FA1B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D562933B1AE1DF9000FA1B3D /* TrashTimeShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrashTimeShare.h; sourceTree = "<group>"; };
@@ -197,9 +197,9 @@
 			files = (
 				D5E8292E1B061575008148F0 /* StoreKit.framework in Frameworks */,
 				D56293011AE167D700FA1B3D /* CoreGraphics.framework in Frameworks */,
-				D5E8292F1B0615A1008148F0 /* Crashlytics.framework in Frameworks */,
+				D5EE8EFD1B0CB20900CC8696 /* Crashlytics.framework in Frameworks */,
 				D56293021AE167D700FA1B3D /* CoreTelephony.framework in Frameworks */,
-				D5E829301B0615A6008148F0 /* SupportKit.framework in Frameworks */,
+				D5EE8EFE1B0CB20D00CC8696 /* SupportKit.framework in Frameworks */,
 				D56293031AE167D700FA1B3D /* CoreText.framework in Frameworks */,
 				D562930A1AE167FA00FA1B3D /* Foundation.framework in Frameworks */,
 				D562930B1AE167FA00FA1B3D /* libxml2.dylib in Frameworks */,
@@ -233,8 +233,9 @@
 		D54A903B1AD5FA3B00528425 = {
 			isa = PBXGroup;
 			children = (
-				D54A90461AD5FA3B00528425 /* Trash Time */,
-				D5FF3A9B1AEFA65C006FE733 /* Third Party */,
+				D54A90461AD5FA3B00528425 /* TrashTime */,
+				D56293101AE1681000FA1B3D /* Frameworks */,
+				D5FF3A9B1AEFA65C006FE733 /* ThirdParty */,
 				D562931C1AE19EBF00FA1B3D /* Today */,
 				D56293381AE1DF9000FA1B3D /* TrashTimeShare */,
 				D56293191AE19EBF00FA1B3D /* Frameworks */,
@@ -252,7 +253,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D54A90461AD5FA3B00528425 /* Trash Time */ = {
+		D54A90461AD5FA3B00528425 /* TrashTime */ = {
 			isa = PBXGroup;
 			children = (
 				D54A90491AD5FA3B00528425 /* AppDelegate.swift */,
@@ -261,23 +262,9 @@
 				D5B41D781ADD81FD00E56477 /* DebugTableViewController.swift */,
 				D5E2C69D1AE6D3ED001B532E /* Notifications.swift */,
 				D55B58FE1AD6B0080069BE0A /* SetupController.swift */,
-				D54A90471AD5FA3B00528425 /* Supporting Files */,
-				D56293101AE1681000FA1B3D /* Frameworks */,
+				D5EE8EFB1B0CB19700CC8696 /* Supporting Files */,
 			);
-			path = "Trash Time";
-			sourceTree = "<group>";
-		};
-		D54A90471AD5FA3B00528425 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D54A904D1AD5FA3B00528425 /* Main.storyboard */,
-				D54A90521AD5FA3B00528425 /* LaunchScreen.xib */,
-				D54A90501AD5FA3B00528425 /* Images.xcassets */,
-				D562935A1AE1EBAE00FA1B3D /* Trash Time.entitlements */,
-				D54A90481AD5FA3B00528425 /* Info.plist */,
-				D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */,
-			);
-			name = "Supporting Files";
+			path = TrashTime;
 			sourceTree = "<group>";
 		};
 		D56293101AE1681000FA1B3D /* Frameworks */ = {
@@ -294,7 +281,6 @@
 				D56293001AE167D700FA1B3D /* CoreText.framework */,
 			);
 			name = Frameworks;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		D56293191AE19EBF00FA1B3D /* Frameworks */ = {
@@ -310,19 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				D562931F1AE19EBF00FA1B3D /* TodayViewController.swift */,
-				D562931D1AE19EBF00FA1B3D /* Supporting Files */,
+				D5EE8EFC1B0CB1A300CC8696 /* Supporting Files */,
 			);
 			path = Today;
-			sourceTree = "<group>";
-		};
-		D562931D1AE19EBF00FA1B3D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */,
-				D562935B1AE1ECA400FA1B3D /* Today.entitlements */,
-				D562931E1AE19EBF00FA1B3D /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D56293381AE1DF9000FA1B3D /* TrashTimeShare */ = {
@@ -341,10 +317,33 @@
 			children = (
 				D562933A1AE1DF9000FA1B3D /* Info.plist */,
 			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5EE8EFB1B0CB19700CC8696 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D54A904D1AD5FA3B00528425 /* Main.storyboard */,
+				D54A90521AD5FA3B00528425 /* LaunchScreen.xib */,
+				D54A90501AD5FA3B00528425 /* Images.xcassets */,
+				D562935A1AE1EBAE00FA1B3D /* Trash Time.entitlements */,
+				D54A90481AD5FA3B00528425 /* Info.plist */,
+				D55B594D1AD6B2F60069BE0A /* BridgingHeader.h */,
+			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D5FF3A9B1AEFA65C006FE733 /* Third Party */ = {
+		D5EE8EFC1B0CB1A300CC8696 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D56293211AE19EBF00FA1B3D /* MainInterface.storyboard */,
+				D562935B1AE1ECA400FA1B3D /* Today.entitlements */,
+				D562931E1AE19EBF00FA1B3D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5FF3A9B1AEFA65C006FE733 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
 				D5FF3A9C1AEFA65C006FE733 /* AMPopTip */,
@@ -355,7 +354,7 @@
 				D5FF3AE61AEFA68F006FE733 /* TOMSMorphingLabel */,
 				D5FF3A9F1AEFA65C006FE733 /* Crashlytics.framework */,
 			);
-			path = "Third Party";
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		D5FF3A9C1AEFA65C006FE733 /* AMPopTip */ = {
@@ -638,7 +637,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 28c8692e863cd8d9f1f9575ab4245e49da550d33 6adeeeb04539332d148e32018601616ff797b1d7cf2ff80868b47d1efbdc7fb0";
+			shellScript = "./ThirdParty/Crashlytics.framework/run 28c8692e863cd8d9f1f9575ab4245e49da550d33 6adeeeb04539332d148e32018601616ff797b1d7cf2ff80868b47d1efbdc7fb0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -718,6 +717,7 @@
 				D54A904E1AD5FA3B00528425 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		D54A90521AD5FA3B00528425 /* LaunchScreen.xib */ = {
@@ -726,6 +726,7 @@
 				D54A90531AD5FA3B00528425 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -818,47 +819,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Trash Time/Trash Time.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TrashTime/Trash Time.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Trash\\ Time/Third\\ Party/**",
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
+					"$(PROJECT_DIR)/ThirdParty/**",
+					"$(PROJECT_DIR)/ThirdParty/SupportKit",
+					"$(PROJECT_DIR)/ThirdParty",
 				);
-				INFOPLIST_FILE = "Trash Time/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TrashTime/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Trash Time/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = TrashTime/BridgingHeader.h;
 			};
 			name = Debug;
 		};
@@ -866,47 +841,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Trash Time/Trash Time.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "TrashTime/Trash Time.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Simple Ink";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Trash\\ Time/Third\\ Party/**",
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
-					"$(PROJECT_DIR)/Third",
-					Party,
-					"$(PROJECT_DIR)/Third",
-					Party/SupportKit,
+					"$(PROJECT_DIR)/ThirdParty/**",
+					"$(PROJECT_DIR)/ThirdParty/SupportKit",
+					"$(PROJECT_DIR)/ThirdParty",
 				);
-				INFOPLIST_FILE = "Trash Time/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/TrashTime/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Trash Time/BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = TrashTime/BridgingHeader.h;
 			};
 			name = Release;
 		};
@@ -919,7 +868,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Today/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Today/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -933,7 +882,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Today/Today.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Simple Ink";
-				INFOPLIST_FILE = Today/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Today/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -954,14 +903,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Third",
-					Party,
+					"$(PROJECT_DIR)/ThirdParty",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TrashTimeShare/Info.plist;
+				INFOPLIST_FILE = "TrashTimeShare/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -985,10 +933,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Third",
-					Party,
+					"$(PROJECT_DIR)/ThirdParty",
 				);
-				INFOPLIST_FILE = TrashTimeShare/Info.plist;
+				INFOPLIST_FILE = "TrashTimeShare/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
