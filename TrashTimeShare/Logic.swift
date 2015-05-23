@@ -260,70 +260,24 @@ public class Logic {
                 return ("No alerts enabled", false, false)
         }
         
-        var firstTrashDate: NSDate?
-        if (trashEnabled && trashHasDateReference) {
-            firstTrashDate = trashNextCollection()
-        }
-        
-        var firstRecyclingDate: NSDate?
-        if (recyclingEnabled && recyclingHasDateReference) {
-            firstRecyclingDate = recyclingNextCollection()
-        }
-        
-        let scheduleFrequency = self.defaults.integerForKey(kScheduledFrequency)
-        
-        var sameWeekday: Bool {
-            get {
-                if (trashEnabled && recyclingEnabled) {
-                    let trashDay = getWeekdayFromDate(firstTrashDate!)
-                    let recyclingDay = getWeekdayFromDate(firstRecyclingDate!)
-                    
-                    if (trashDay == recyclingDay) {
-                        return true;
-                    }
-                    return false
-                }
-                else {
-                    return true
-                }
-            }
-        }
-        
-        var currentDate: NSDate?
-        if (trashEnabled && recyclingEnabled) {
-            currentDate = firstTrashDate!.earlierDate(firstRecyclingDate!)
-        } else {
-            currentDate = (trashEnabled ? firstTrashDate! : firstRecyclingDate!)
-        }
-        
-        while (currentDate?.earlierDate(NSDate()) == currentDate) {
-            currentDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitWeekOfYear, value: 1, toDate: currentDate!, options: nil)
-        }
-        
-        var currentDay = NSCalendar.currentCalendar().components(.CalendarUnitWeekday, fromDate: currentDate!).weekday
-        
-        let trashDay: Int? = (Logic.instance.hasTrashReferenceDate() ? getWeekdayFromDate(getDateReference(kTrashReferenceDate)) : nil)
-        let recycleDay: Int? = (Logic.instance.hasRecyclingReferenceDate() ? getWeekdayFromDate(getDateReference(kRecyclingReferenceDate)) : nil)
-        
-        var isTrash = false
-        var isRecycling = false;
-        
-        if (sameWeekday && trashEnabled && recyclingEnabled && currentDate?.laterDate(firstTrashDate!) == currentDate && currentDate?.laterDate(firstRecyclingDate!) == currentDate && (scheduleFrequency == RecyclingFrequency.Weekly.hashValue || (scheduleFrequency == RecyclingFrequency.BiWeekly.hashValue && self.getWeekParityFromDate(currentDate!) == self.getWeekParityFromDate(firstRecyclingDate!)))) {
-            isTrash = true
-            isRecycling = true
-        }
-        else if (trashEnabled && currentDay == trashDay && currentDate?.laterDate(firstTrashDate!) == currentDate) {
-            isTrash = true
-        }
-        else if (recyclingEnabled && currentDay == recycleDay && currentDate?.laterDate(firstRecyclingDate!) == currentDate && (scheduleFrequency == RecyclingFrequency.Weekly.hashValue || (self.defaults.integerForKey(kScheduledFrequency) == RecyclingFrequency.BiWeekly.hashValue && self.getWeekParityFromDate(currentDate!) == self.getWeekParityFromDate(firstRecyclingDate!)))) {
-            isRecycling = true
-        }
-        
         var daysToGo = "?"
-        if isTrash {
-            daysToGo = self.daysUntilCollection(.Trash)
-        } else if isRecycling {
-            daysToGo = self.daysUntilCollection(.Recycling)
+        var trashCountdown = self.daysUntilCollection(.Trash)
+        var recyclingCountdown = self.daysUntilCollection(.Recycling)
+        var isTrash = false
+        var isRecycling = false
+        
+        if trashCountdown == recyclingCountdown {
+            daysToGo = trashCountdown
+            isTrash = true
+            isRecycling = true
+        }
+        else if trashCountdown < recyclingCountdown {
+            daysToGo = trashCountdown
+            isTrash = true
+        }
+        else if recyclingCountdown < trashCountdown {
+            daysToGo = recyclingCountdown
+            isRecycling = true
         }
 
         switch daysToGo {
