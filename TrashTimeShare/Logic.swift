@@ -266,20 +266,30 @@ public class Logic {
         var isTrash = false
         var isRecycling = false
         
-        if trashCountdown == recyclingCountdown {
+        if trashEnabled && recyclingEnabled {
+            if trashCountdown == recyclingCountdown {
+                daysToGo = trashCountdown
+                isTrash = true
+                isRecycling = true
+            }
+            else if trashCountdown.toInt() < recyclingCountdown.toInt() {
+                daysToGo = trashCountdown
+                isTrash = true
+            }
+            else if recyclingCountdown.toInt() < trashCountdown.toInt() {
+                daysToGo = recyclingCountdown
+                isRecycling = true
+            }
+        }
+        else if trashEnabled {
             daysToGo = trashCountdown
             isTrash = true
-            isRecycling = true
         }
-        else if trashCountdown < recyclingCountdown {
-            daysToGo = trashCountdown
-            isTrash = true
-        }
-        else if recyclingCountdown < trashCountdown {
+        else if recyclingEnabled {
             daysToGo = recyclingCountdown
             isRecycling = true
         }
-
+        
         switch daysToGo {
         case "?": daysToGo = "unknown"
         case "0": daysToGo = "today"
